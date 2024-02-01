@@ -7,7 +7,6 @@ import {
   FaRegArrowAltCircleRight,
 } from "react-icons/fa";
 import Header from "./Header";
-import Backgroundimage from "../public/Olivier.jpg";
 import LanguagesTools from "./LanguagesTools";
 import Project from "./Project";
 import { useTypewriter, Cursor } from "react-simple-typewriter";

@@ -1,6 +1,6 @@
 import styles from "../styles/Project.module.css";
 import mymoviz from "../public/mymoviz_project.png";
-import Ecna from "../public/Ecna.jpeg";
+import Ecna from "../public/ECNA.jpeg";
 import locapic from '../public/Locapic.jpeg'
 import ImageSlider from "./ImageSlider";
 import { IoEarth } from "react-icons/io5";
