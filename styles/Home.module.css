@@ -1,22 +1,172 @@
-.main {
+.container{
+  background-color: #2c2c2c;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+
+.profil{
+  width: 40%;
+  border-radius: 20%;
+}
+
+.body{
   display: flex;
   flex-direction: column;
+  color: white;
+  font-size: 30px;
+  line-height: 0.8;
+  text-align: left;
+  width: 45%;
+}
+
+.body p{
+  line-height: 1;
+}
+
+.status{
+  font-weight: 400;
+  color: #25acc7;
+  line-height: 1;
+}
+
+.contact{
+  margin-top: 15px;
+  background-color: white;
+  width: 160px;
+  height: 40px;;
+  display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 4rem 0;
+  border-radius: 10px;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+.contact:hover{
+  background-color: #25acc7;
+  color: white;
+  border: 2px solid #25acc7;
+  cursor: pointer;
 }
 
-.title {
-  line-height: 1.15;
-  font-size: 4rem;
+.logobox{
+  display: flex;
+  justify-content: flex-end;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 20px;
+  width: 35%;
 }
 
-.title a:hover, .title a:focus, .title a:active {
-  text-decoration: underline;
+.icons {
+  color: #25acc7;
+  opacity: 60%;
+  transition: 150ms;
+}
+
+.icons:hover {
+  cursor: pointer;
+  opacity: 100%;
+  transform: scale(1.2);
+}
+
+/* Responsive */
+
+@media screen and (max-width:1090px){
+  .logobox{
+    width: 85%;
+  }
+  .logo{
+    width: 45%;
+  }
+}
+
+@media screen and (max-width:995px){
+  .logobox{
+    width: 95%;
+  }
+  .logo{
+    width: 45%;
+  }
+}
+
+@media screen and (max-width:910px){
+  .body h1{
+    font-size: 50px;
+  }
+
+  .body p{
+    font-size: 20px;
+  }
+
+  .allstatus p{
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width:880px){
+  .logobox{
+    width: 95%;
+  }
+  .logo{
+    width: 50%;
+  }
+}
+
+@media screen and (max-width:810px){
+  .logobox{
+    width: 95%;
+  }
+  .logo{
+    width: 60%;
+  }
+}
+
+@media screen and (max-width:755px){
+  .body h1{
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width:675px){
+  .logobox{
+    width: 95%;
+  }
+  .logo{
+    width: 70%;
+  }
+}
+
+@media screen and (max-width:435px){
+  .container{
+    flex-direction: column;
+  }
+
+  .profil{
+    width: 75%;
+    margin-top: 100px;
+  }
+
+  .body{
+    width: 80%;
+  }
+}
+
+@media screen and (max-width:280px){
+  .profil{
+    width: 85%;
+    margin-top: 100px;
+  }
+  .body h1{
+    font-size: 30px;
+  }
+  .logo{
+    width: 90%;
+  }
 }
