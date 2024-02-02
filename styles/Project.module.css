@@ -4,7 +4,14 @@
   color: #25acc7;
   margin-top: 20px;
   font-size: 25px;
+  opacity: 60%;
   text-align: center;
+  transition: 150ms;
+}
+
+.iconlink:hover {
+  opacity: 100%;
+  transform: scale(1.1);
 }
 
 .main {
