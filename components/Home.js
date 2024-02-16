@@ -44,11 +44,11 @@ function Home() {
                 I am available now to support you in your projects
               </p>
             </div>
-            <div className={styles.moon} onClick={darkMode}>
+            {/* <div className={styles.moon} onClick={darkMode}>
               <p>
                 <GoMoon />
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
         <Project />
