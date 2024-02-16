@@ -11,19 +11,7 @@ import Project from "./Project";
 import Header from "./Header";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 // import { FaLinkedinIn, FaGithub, FaFileDownload } from "react-icons/fa";
-import { Link } from "react-scroll";
-import { useState } from "react";
-import Modal from "./Modal";
-import expressicons from "../public/expressjs_icon.svg";
-import githubicons from "../public/github-icons.png";
-import mongodbicons from "../public/mongodb-icon.svg";
-import nodejsicons from "../public/nodejs_icon.svg";
-import reactjsicons from "../public/reactjs-icon.svg";
-import javascripticons from "../public/javascript_logopng.png";
-import nextjsicons from "../public/nextjs_icon.png";
-import redux from "../public/redux.svg";
-import reactnative from "../public/reactnative_icon.png";
-import Image from "next/image";
+
 
 function Home() {
   const [text] = useTypewriter({

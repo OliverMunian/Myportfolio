@@ -3,7 +3,6 @@ import mymoviz from "../public/mymoviz_project.png";
 import Ecna from "../public/ECNA.png";
 import locapic from "../public/Locapic.jpeg";
 import weatherApp from "../public/WeatherApp.jpg";
-import ImageSlider from "./ImageSlider";
 import { IoEarth } from "react-icons/io5";
 import { FaGithub } from "react-icons/fa";
 import Image from "next/image";
