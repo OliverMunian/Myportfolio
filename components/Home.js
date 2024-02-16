@@ -41,7 +41,7 @@ function Home() {
             <div>
               <h1>Olivier Malahel</h1>
               <p className={styles.description}>
-                I am available now to support you in your projects
+                I am available now to support you in your projects. FPV drone services available soon
               </p>
             </div>
             {/* <div className={styles.moon} onClick={darkMode}>
