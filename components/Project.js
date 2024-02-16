@@ -3,6 +3,7 @@ import mymoviz from "../public/mymoviz_project.png";
 import Ecna from "../public/ECNA.png";
 import locapic from "../public/Locapic.jpeg";
 import weatherApp from "../public/WeatherApp.jpg";
+import setup from "../public/Setup.png";
 import { IoEarth } from "react-icons/io5";
 import { FaGithub } from "react-icons/fa";
 import Image from "next/image";
@@ -57,36 +58,55 @@ function Project() {
         "ECNA is my personal project that i started with collaborators at La Capsule. This is a mobile application for ambulances, build with React Native.",
       src: Ecna,
     },
+    {
+      title: "The setup",
+      description: "Cinewhoop for the interior and Manta 6 by axisflying for outside mid/long range",
+      src: setup,
+    },
   ];
 
   const allImg = IMAGES.map((data, i) => {
     if (i == 2) {
-      return(
-        <div  className={styles.icons2}>
-        <Image src={data.src} className={styles.iconsimg} />
-        <div className={styles.description}>
-          <h1>{data.title}</h1>
-          <p>{data.description}</p>
-          <div className={styles.link}>
-            <p>{data.link}</p>
+      return (
+        <div className={styles.icons2}>
+          <Image src={data.src} className={styles.iconsimg} />
+          <div className={styles.description}>
+            <h1>{data.title}</h1>
+            <p>{data.description}</p>
+            <div className={styles.link}>
+              <p>{data.link}</p>
+            </div>
           </div>
         </div>
-      </div>
-      )
+      );
     }
-     if(i== 3){
-      return(
-        <div  className={styles.icons3}>
-        <Image src={data.src} className={styles.iconsimg} />
-        <div className={styles.description3}>
-          <h1>{data.title}</h1>
-          <p>{data.description}</p>
-          <div className={styles.link}>
-            <p>{data.link}</p>
+    if (i == 3) {
+      return (
+        <div className={styles.icons3}>
+          <Image src={data.src} className={styles.iconsimg} />
+          <div className={styles.description3}>
+            <h1>{data.title}</h1>
+            <p>{data.description}</p>
+            <div className={styles.link}>
+              <p>{data.link}</p>
+            </div>
           </div>
         </div>
-      </div>
-      )
+      );
+    }
+    if (i == 4) {
+      return (
+        <div className={styles.icons4}>
+          <Image src={data.src} className={styles.iconsimg} />
+          <div className={styles.description}>
+            <h1>{data.title}</h1>
+            <p>{data.description}</p>
+            <div className={styles.link}>
+              <p>{data.link}</p>
+            </div>
+          </div>
+        </div>
+      );
     }
     return (
       <div key={i} className={styles.icons}>
