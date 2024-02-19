@@ -9,7 +9,7 @@ function video() {
       {/* <Video src={fpvdrone} autoplay loop muted primary-color='#f2b129' controlslist='nofullscreen'/> */}
       <MuxPlayer
         streamType="on-demand"
-        playbackId="qw9wmwBxy6xJtQMNTr00vAS7pDhfujYeIgBpiqTZfoe4"
+        playbackId="Nxlq2A3kxACIC1y7ixPl7PH5So1tA01jDJsaPAoJl74k"
         metadataViewerUserId="Placeholder (optional)"
         primaryColor="transparent"
         secondaryColor="transparent"
