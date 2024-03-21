@@ -3,6 +3,7 @@ import mymoviz from "../public/mymoviz_project.png";
 import Ecna from "../public/ECNA.png";
 import locapic from "../public/Locapic.jpeg";
 import weatherApp from "../public/WeatherApp.jpg";
+import ios from "../public/IOS.png";
 import setup from "../public/Setup.png";
 import { IoEarth } from "react-icons/io5";
 import { FaGithub } from "react-icons/fa";
@@ -54,13 +55,15 @@ function Project() {
     },
     {
       title: "Ecna",
+      qrcode: ios,
       description:
-        "ECNA is my personal project that i started with collaborators at La Capsule. This is a mobile application for ambulances, build with React Native.",
+        "In building... Flash this QR code with an Iphone use: 'Olivier' or 'Brice' - password: 123 on Homepage",
       src: Ecna,
     },
     {
       title: "The setup",
-      description: "Cinewhoop for the interior and Manta 6 by axisflying for outside mid/long range",
+      description:
+        "Cinewhoop for the interior and Manta 6 by axisflying for outside mid/long range",
       src: setup,
     },
   ];
@@ -86,6 +89,7 @@ function Project() {
           <Image src={data.src} className={styles.iconsimg} />
           <div className={styles.description3}>
             <h1>{data.title}</h1>
+            <Image src={data.qrcode} className={styles.qrcode} />
             <p>{data.description}</p>
             <div className={styles.link}>
               <p>{data.link}</p>
