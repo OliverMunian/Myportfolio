@@ -1,9 +1,10 @@
 import styles from "../styles/Project.module.css";
 import mymoviz from "../public/mymoviz_project.png";
 import Ecna from "../public/ECNA.png";
-import locapic from "../public/Locapic.jpeg";
+import locapic from "../public/Locapic.png";
 import weatherApp from "../public/WeatherApp.jpg";
 import ios from "../public/IOS.png";
+import qrCodeLocapic from "../public/qrCode_locapic.png";
 import setup from "../public/Setup.png";
 import { IoEarth } from "react-icons/io5";
 import { FaGithub } from "react-icons/fa";
@@ -30,7 +31,8 @@ function Project() {
     {
       title: "Locapic",
       description:
-        "Locapic is a project which was made in React Native, at La Capsule Bootcamp. In this app you're be able to put a pin to save the differents places in the map of France",
+        "Locapic is a project which has created in React Native. In this app you can save and display the big towns of France on a map",
+      qrcode: qrCodeLocapic,
       src: locapic,
     },
     {
@@ -69,6 +71,21 @@ function Project() {
   ];
 
   const allImg = IMAGES.map((data, i) => {
+    if (i == 1) {
+      return (
+        <div className={styles.icons3}>
+          <Image src={data.src} className={styles.iconsimg} />
+          <div className={styles.description3}>
+            <h1>{data.title}</h1>
+            <Image src={data.qrcode} className={styles.qrcode} />
+            <p>{data.description}</p>
+            <div className={styles.link}>
+              <p>{data.link}</p>
+            </div>
+          </div>
+        </div>
+      );
+    }
     if (i == 2) {
       return (
         <div className={styles.icons2}>
