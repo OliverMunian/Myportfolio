@@ -19,7 +19,7 @@ function video() {
       style={{'--controls': 'none'}}/>
       <div className={styles.comments}>
         <h1>FPV Drone</h1>
-        <p>Training session - Quick flight outside </p>
+        <p>Wedding Day - Högberga Gård 🇸🇪 </p>
       </div>
     </div>
   );

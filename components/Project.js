@@ -59,7 +59,7 @@ function Project() {
       title: "Ecna",
       qrcode: ios,
       description:
-        "In building... Flash this QR code with an Iphone use: 'Olivier' or 'Brice' - password: 123 on Homepage",
+        "In building... Flash this QR code and use: 'John' or 'Brice' & password: 123 on Homepage",
       src: Ecna,
     },
     {
