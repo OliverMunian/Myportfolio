@@ -1,10 +1,10 @@
 .header {
+  position: absolute;
   width: 100%;
-  height: 90px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ededec;
+  backdrop-filter: blur(5px);
 }
 
 .theme {
@@ -81,7 +81,7 @@
 }
 
 .icons {
-  color: #f2b129;
+  color: white;
   opacity: 60%;
   transition: 150ms;
   margin-left: 15px;

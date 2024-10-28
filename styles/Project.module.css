@@ -1,11 +1,21 @@
 .main {
-  width: 50%;
   display: flex;
-  flex-wrap: wrap;
-  padding: 10px;
-  height: 90vh;
   overflow: hidden;
-  overflow-y: scroll;
+  
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.toolsBox {
+  display: flex;
+  animation: 10s slide infinite linear;
 }
 
 .icons {
@@ -18,7 +28,7 @@
   padding: 5px;
 }
 
-.icons2{
+.icons2 {
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -30,7 +40,7 @@
   margin-bottom: 5px;
 }
 
-.icons3{
+.icons3 {
   position: relative;
   display: flex;
   justify-content: center;
@@ -39,10 +49,9 @@
   margin-top: 5px;
   margin-bottom: 5px;
   padding: 5px;
-
 }
 
-.description3{
+.description3 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,7 +67,6 @@
   padding: 40px;
 }
 
-
 .description3:hover {
   opacity: 0.9;
 }
@@ -72,7 +80,7 @@
   text-align: center;
 }
 
-.icons4{
+.icons4 {
   position: relative;
   margin-top: -220px;
   display: flex;
@@ -113,20 +121,20 @@
   text-align: center;
 }
 
-.link{
-  margin-top: 10px
+.link {
+  margin-top: 10px;
 }
-.link a{
+.link a {
   margin-top: 10px;
   text-decoration: none;
   color: white;
 }
 
-.link p:hover{
+.link p:hover {
   transition: 300ms;
-  color:#f2b129;
+  color: #f2b129;
   cursor: pointer;
-  transform: scale(1.1)
+  transform: scale(1.1);
 }
 
 .allimg {
@@ -135,7 +143,7 @@
   margin-top: 10px;
 }
 
-/*MEDIA QUERIES & RESPONSIVE*/
+/* 
 @media screen and (max-width: 1400px) {
   .icons4 {
     margin-top: -220px;
@@ -168,7 +176,7 @@
 }
 
 @media screen and (max-width: 1160px) {
-  .description3{
+  .description3 {
     padding: 25px;
   }
 
@@ -181,18 +189,19 @@
   }
 }
 
-
 @media screen and (max-width: 1030px) {
-  .description3, .description{
+  .description3,
+  .description {
     padding: 15px;
   }
 
-  .description h1, .description3 h1{
+  .description h1,
+  .description3 h1 {
     font-size: 20px;
     margin-bottom: 5px;
   }
 
-  .description p{
+  .description p {
     font-size: 12px;
   }
 
@@ -201,7 +210,6 @@
   }
 }
 
-
 @media screen and (max-width: 850px) {
   .allimg {
     display: flex;
@@ -209,21 +217,24 @@
     margin-top: 10px;
     width: 100%;
   }
-  .icons,.icons2{
+  .icons,
+  .icons2 {
     width: 100%;
   }
 
-  .icons3{
+  .icons3 {
     width: 70%;
     margin-left: 50%;
     transform: translateX(-50%);
   }
 
-  .description3, .description{
+  .description3,
+  .description {
     padding: 20px;
   }
 
-  .description h1, .description3 h1{
+  .description h1,
+  .description3 h1 {
     font-size: 25px;
     margin-bottom: 15px;
   }
@@ -242,4 +253,4 @@
   .title {
     top: 30px;
   }
-}
+} */
