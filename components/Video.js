@@ -3,7 +3,7 @@ import Video from "next-video";
 import Header from "./Header";
 import MuxPlayer from "@mux/mux-player-react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-import Head from "next/head";
+
 
 function video() {
   const [text] = useTypewriter({
@@ -15,14 +15,6 @@ function video() {
     <div style={{ position: "relative" }}>
       <Header />
       <div className={styles.main}>
-        {/* <video
-          src="/_next-video/Albania_Trip.mp4"
-          autoPlay
-          loop
-          muted
-          className={styles.video}
-        /> */}
-
         <MuxPlayer
           streamType="on-demand"
           playbackId="mUvCLZfO8q00v00uDIcrFREa00lUFdZMyKvQKSUJSDOI400"
