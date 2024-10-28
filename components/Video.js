@@ -12,15 +12,29 @@ function video() {
   });
 
   return (
-    <div style={{position:'relative'}}>
-      <Header/>
+    <div style={{ position: "relative" }}>
+      <Header />
       <div className={styles.main}>
-        <video
+        {/* <video
           src="/_next-video/Albania_Trip.mp4"
           autoPlay
           loop
           muted
           className={styles.video}
+        /> */}
+
+        <MuxPlayer
+          streamType="on-demand"
+          playbackId="mUvCLZfO8q00v00uDIcrFREa00lUFdZMyKvQKSUJSDOI400"
+          metadataViewerUserId="Placeholder (optional)"
+          primaryColor="transparent"
+          secondaryColor="transparent"
+          autoPlay="muted"
+          loop
+          className={styles.video}
+          style={{
+            "--controls": "none",
+          }}
         />
       </div>
       <div className={styles.container}>
@@ -37,7 +51,15 @@ function video() {
             </div>
             <div className={styles.subDescription}>
               <h1 className={styles.description}> Olivier Malahel</h1>
-              <p className={styles.description} style={{ fontStyle: "italic", fontSize: 15, textAlign:'center', marginTop:10 }}>
+              <p
+                className={styles.description}
+                style={{
+                  fontStyle: "italic",
+                  fontSize: 15,
+                  textAlign: "center",
+                  marginTop: 10,
+                }}
+              >
                 I am available now to support you in your projects
               </p>
             </div>
