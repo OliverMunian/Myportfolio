@@ -13,7 +13,7 @@ function video() {
 
   return (
     <div style={{ position: "relative" }}>
-      <Header />
+      <Header style={{position:'absolute', zIndex:3}} />
       <div className={styles.main}>
         <MuxPlayer
           streamType="on-demand"

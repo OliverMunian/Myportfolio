@@ -1,16 +1,21 @@
 import styles from "../styles/Project.module.css";
 import mymoviz from "../public/mymoviz_project.png";
-import Ecna from "../public/ECNA.png";
+import iphone from "../public/iphone.png";
+import LaCapsule from "../public/La_capsule_logo.png";
 import locapic from "../public/Locapic.png";
 import weatherApp from "../public/WeatherApp.jpg";
-// import ios from "../public/IOS.png";
 import dream2car from "../public/dream2car.PNG";
 import qrCodeLocapic from "../public/qrCode_locapic.png";
 import setup from "../public/Setup.png";
+import { RiToolsFill } from "react-icons/ri";
 import { IoEarth } from "react-icons/io5";
 import { FaGithub } from "react-icons/fa";
+import { FaMapPin } from "react-icons/fa";
+import { MdSwipe } from "react-icons/md";
+import Slider from "./Slider";
 import Image from "next/image";
 import Tools from "./Tools";
+import MuxPlayer from "@mux/mux-player-react";
 
 function Project() {
   const IMAGES = [
@@ -56,13 +61,6 @@ function Project() {
         </div>
       ),
     },
-    // {
-    //   title: "Ecna",
-    //   qrcode: ios,
-    //   description:
-    //     "In building... Flash this QR code and use: 'John' or 'Brice' & password: 123 on Homepage",
-    //   src: Ecna,
-    // },
     {
       title: "The setup",
       description:
@@ -160,13 +158,125 @@ function Project() {
 
   return (
     <div className={styles.main}>
-      <div className={styles.toolsBox}>
-        <Tools/>
-        <Tools/>
+      {/* <div className={styles.aboutme}>
+        <h1>About me</h1>
+        <p>
+          I recently decide to move to Sweden, I am 30 years old, born and raised
+          in Paris. I recently decided to move to Sweden because i’m curious
+          about Swedish culture. NowI’m looking for a new work experience in
+          Stockholm as a full stack web developer, that will give me some new
+          opportunities to increase my skills and learn more. Ready to bring a
+          fresh perspective to your team and tackle new challenges in the web
+          development world{" "}
+        </p>
+      </div> */}
+      <div className={styles.video}>
+        <div className={styles.videoBox}>
+          <Image src={iphone} className={styles.iphone} />
+          <MuxPlayer
+            streamType="on-demand"
+            playbackId="HNaomUlHcXVTr6nQmds1NoxjnJWmByWt2GIji5k9KTw"
+            metadataViewerUserId="Placeholder (optional)"
+            primaryColor="transparent"
+            secondaryColor="transparent"
+            autoPlay="muted"
+            loop
+            className={styles.player}
+            style={{
+              "--controls": "none",
+            }}
+          />
+        </div>
+        <div className={styles.ecnadescription}>
+          <h1 className={styles.title}>
+            ECNA - <span className={styles.italic}>Time is now yours</span>
+          </h1>
+          <p
+            style={{
+              color: "white",
+              fontStyle: "italic",
+              marginTop: "10px",
+              fontSize: "18px",
+            }}
+          >
+            Before moving to Sweden, I worked in ambulance in France during many
+            years. <br /> <br />
+            So I decided to convert myself as a web developer to create my own
+            app to help ambulances companies to have a better organization at work and mainly
+            save time during the day to help more patients. <br />
+            I brought them new features to have access to their own vehicle
+            fleet and a part of the activity about the company and also the
+            activity of their collaborators <br />
+          </p>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              color: "white",
+              fontStyle: "italic",
+              marginTop: "10px",
+            }}
+          >
+            <p>The app is still in progress...</p>
+            <RiToolsFill size={30} />
+          </div>
+        </div>
       </div>
-      <div className={styles.toolsBox}>
-        <Tools/>
-        <Tools/>
+      <div className={styles.otherProjects}>
+        <div className={styles.projectsFirstPart}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              marginRight: "20px",
+            }}
+          >
+            <h1 className={styles.title}> La Capsule - Coding Bootcamp</h1>
+            <div
+              style={{ display: "flex", color: "white", fontStyle: "italic" }}
+            >
+              <FaMapPin color />
+              <p>56 boulevard Perreire, Paris 17e - France </p>
+            </div>
+          </div>
+          <div className={styles.lacapsule}>
+            <Image src={LaCapsule} width={100} height={100} />
+          </div>
+        </div>
+        <div className={styles.boxProjects}>
+          <div className={styles.firstPartDecrisption}>
+            <p
+              style={{
+                color: "white",
+                fontStyle: "italic",
+                marginTop: "10px",
+                fontSize: "18px",
+              }}
+            >
+              I joined the La Capsule Bootcamp in 2023 to start my reconversion
+              as web developer fullstack. During intensives 10 weeks, I learned
+              how to code and build projects with differents languages.
+              <br />
+              My mentors taught me how to build the beginning of my mobile app,
+              and give me the keys to reach my goals.
+              <br />
+              <br />
+              Here some few small projects that I did in the Bootcamp
+              <br />
+            </p>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                marginTop: "50px",
+              }}
+            >
+              Swipe right to see the projects{" "}
+              <MdSwipe style={{ marginLeft: "10px" }} size={20} />
+            </div>
+          </div>
+          <Slider />
+        </div>
       </div>
       {/* <div className={styles.allimg}>{allImg}</div> */}
     </div>

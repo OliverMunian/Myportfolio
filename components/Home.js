@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import { GoMoon } from "react-icons/go";
 import Project from "./Project";
+import Tools from "./Tools";
 import Header from "./Header";
 import Video from "./Video";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
@@ -17,6 +18,7 @@ function Home() {
   return (
     <div className={styles.main}>
       <Video />
+      <Tools/>
       <Project />
     </div>
   );

@@ -14,12 +14,6 @@ function Header() {
     <div className={styles.header}>
       <div className={styles.theme}>
         <div className={styles.mailcv}>
-          <div className={styles.mail}>
-            <p>omalahel@gmail.com</p>
-            <button className={styles.btns}>
-              <p><a href="mailto:omalahel@gmail.com">Contact</a></p>
-            </button>
-          </div>
           <div className={styles.divcv}>
             <button className={styles.cv}>
             <a href="CV.pdf" download="CV.pdf">CV</a>

@@ -1,0 +1,67 @@
+.container {
+  width: 100%;
+}
+
+.swiperSlide {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.swiperSlideLocapic {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.projectDescriptionLocapic {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+  opacity: 0;
+  height: 100%;
+  text-align: center;
+  transition: 300ms;
+  border-radius: 40px;
+  padding: 0 10px;
+}
+
+.projectDescriptionLocapic:hover {
+  opacity: 0.9;
+}
+
+.projectDescription {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+  opacity: 0;
+  height: 100%;
+  text-align: center;
+  transition: 300ms;
+  padding: 0 10px;
+}
+
+.projectDescription:hover {
+  opacity: 0.9;
+}
+.link {
+  margin-top: 10px;
+  color: #e6585b;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.link:hover {
+  cursor: pointer;
+  color: white;
+}

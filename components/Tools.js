@@ -24,13 +24,12 @@ function Tools() {
   ];
 
   const allImg = pictures.map((data, i) => {
-    if(data.name == "Git"){
+    if (data.name == "Git") {
       return (
-        <div key={i} className={styles.icons}>
+        <div key={i} className={styles.icons} style={{width: 50}}>
           <Image
             src={data.src}
-            width={100}
-            height={100}
+
             className={styles.image}
           />
           <p className={styles.name}>{data.name}</p>
@@ -39,18 +38,24 @@ function Tools() {
     }
     return (
       <div key={i} className={styles.icons}>
-        <Image
-          src={data.src}
-          width={50}
-          height={50}
-          className={styles.image}
-        />
+        <Image src={data.src} width={50} height={50} className={styles.image} />
         <p className={styles.name}>{data.name}</p>
       </div>
     );
   });
 
-  return <div className={styles.containertools}>{allImg}</div>;
+  return (
+    <div className={styles.containertools}>
+      <div className={styles.toolsBox}>
+        {allImg}
+        {allImg}
+      </div>
+      <div className={styles.toolsBox}>
+        {allImg}
+        {allImg}
+      </div>
+    </div>
+  );
 }
 
 export default Tools;

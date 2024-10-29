@@ -1,22 +1,107 @@
 .main {
+  padding-top: 30px;
   display: flex;
+  justify-content: center;
+  flex-direction: column;
   overflow: hidden;
-  
+  background: linear-gradient(-180deg, #1a2755 30%, #1d94ae);
 }
 
-@keyframes slide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-.toolsBox {
+.aboutme {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 15%;
+  width: 70%;
   display: flex;
-  animation: 10s slide infinite linear;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
 }
+
+.video {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 20px;
+}
+
+.videoBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 25%;
+  border-radius: 53px;
+  overflow: hidden;
+
+}
+
+.iphone {
+  z-index: 3;
+}
+
+.player {
+  width: 91%;
+  position: absolute;
+  top: 5;
+}
+
+.title {
+  font-size: 50px;
+  color: white;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.ecnadescription {
+  margin-left: 15%;
+  width: 55%;
+}
+
+.otherProjects {
+  display: flex;
+  flex-direction: column;
+  padding: 100px;
+  width: 100%;
+  background-color: #e6585b;
+  background: linear-gradient(180deg, transparent, #e6585b 55%);
+}
+
+.projectsFirstPart{
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.boxProjects{
+  display: flex;
+  margin-top: 30px;
+}
+
+.firstPartDecrisption{
+  margin-top: 20px;
+  color: white;
+  font-style: italic;
+  width: 65%;
+  font-size:16px
+}
+
+.lacapsule{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid white;
+  border-radius: 50%;
+}
+
+
+
+
+
 
 .icons {
   position: relative;
