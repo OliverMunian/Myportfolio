@@ -35,7 +35,6 @@
   width: 25%;
   border-radius: 53px;
   overflow: hidden;
-
 }
 
 .iphone {
@@ -57,9 +56,22 @@
   font-style: italic;
 }
 
+
 .ecnadescription {
   margin-left: 15%;
   width: 55%;
+}
+
+.ecnaDetail{
+  color: white;
+  font-style: italic;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.inProgress{
+  font-style: italic;
+  color: white;
 }
 
 .otherProjects {
@@ -68,7 +80,7 @@
   padding: 100px;
   width: 100%;
   background-color: #e6585b;
-  background: linear-gradient(180deg, transparent, #e6585b 55%);
+  background: linear-gradient(180deg, transparent, #e6595c 55%);
 }
 
 .projectsFirstPart{
@@ -79,11 +91,11 @@
 
 .boxProjects{
   display: flex;
+  align-items: flex-start;
   margin-top: 30px;
 }
 
 .firstPartDecrisption{
-  margin-top: 20px;
   color: white;
   font-style: italic;
   width: 65%;
@@ -98,244 +110,91 @@
   border-radius: 50%;
 }
 
+/*MEDIA-QUERIES*/
 
-
-
-
-
-.icons {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding: 5px;
-}
-
-.icons2 {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  width: 65%;
-  overflow-y: hidden;
-  padding: 5px;
-  align-self: flex-start;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.icons3 {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 35%;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding: 5px;
-}
-
-.description3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: absolute;
-  color: white;
-  width: 90%;
-  height: 95%;
-  transition: 600ms;
-  border-radius: 30px;
-  background-color: rgba(0, 0, 0, 0.9);
-  opacity: 0;
-  padding: 40px;
-}
-
-.description3:hover {
-  opacity: 0.9;
-}
-
-.description3 h1 {
-  margin-bottom: 20px;
-}
-
-.description3 p {
-  color: white;
-  text-align: center;
-}
-
-.icons4 {
-  position: relative;
-  margin-top: -220px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 65%;
-  overflow-y: hidden;
-  padding: 5px;
-  align-self: flex-start;
-  margin-bottom: 5px;
-}
-
-.description {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: absolute;
-  color: white;
-  top: 0;
-  height: 100%;
-  transition: 600ms;
-  background-color: rgba(0, 0, 0, 0.9);
-  opacity: 0;
-  padding: 20px;
-}
-
-.description:hover {
-  opacity: 0.9;
-}
-
-.description h1 {
-  margin-bottom: 20px;
-}
-
-.description p {
-  color: white;
-  text-align: center;
-}
-
-.link {
-  margin-top: 10px;
-}
-.link a {
-  margin-top: 10px;
-  text-decoration: none;
-  color: white;
-}
-
-.link p:hover {
-  transition: 300ms;
-  color: #f2b129;
-  cursor: pointer;
-  transform: scale(1.1);
-}
-
-.allimg {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 10px;
-}
-
-/* 
-@media screen and (max-width: 1400px) {
-  .icons4 {
-    margin-top: -220px;
+@media screen and (max-width: 1450px) {
+  .videoBox {
+    border-radius: 53px;
   }
 }
 
-@media screen and (max-width: 1350px) {
-  .icons4 {
-    margin-top: -180px;
+@media screen and (max-width: 1430px) {
+  .videoBox {
+    border-radius: 50px;
   }
 }
 
-@media screen and (max-width: 1275px) {
-  .description3 p {
-    font-size: 13px;
-  }
-  .icons4 {
-    margin-top: -170px;
+@media screen and (max-width: 1300px) {
+  .videoBox {
+    width: 25%;
+    border-radius: 45px;
   }
 }
 
-@media screen and (max-width: 1185px) {
-  .description3 p {
-    font-size: 12px;
-  }
-
-  .icons4 {
-    margin-top: -160px;
+@media screen and (max-width: 1175px) {
+  .videoBox {
+    width: 23%;
+    border-radius: 35px;
   }
 }
 
-@media screen and (max-width: 1160px) {
-  .description3 {
-    padding: 25px;
-  }
-
-  .description p {
-    font-size: 12px;
-  }
-
-  .icons4 {
-    margin-top: -150px;
+@media screen and (max-width: 980px) {
+  .videoBox {
+    width: 25%;
+    border-radius: 33px;
   }
 }
 
-@media screen and (max-width: 1030px) {
-  .description3,
-  .description {
-    padding: 15px;
+@media screen and (max-width: 900px) {
+  .title{
+    font-size: 35px;
   }
-
-  .description h1,
-  .description3 h1 {
-    font-size: 20px;
-    margin-bottom: 5px;
-  }
-
-  .description p {
-    font-size: 12px;
-  }
-
-  .icons4 {
-    margin-top: -130px;
+  .ecnaDetail{
+    font-size: 14px;
   }
 }
 
 @media screen and (max-width: 850px) {
-  .allimg {
+  .videoBox {
+    width: 30%;
+    border-radius: 30px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .boxProjects {
+    flex-direction: column;
+  }
+
+  .firstPartDecrisption{
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
-    width: 100%;
-  }
-  .icons,
-  .icons2 {
-    width: 100%;
-  }
-
-  .icons3 {
-    width: 70%;
-    margin-left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .description3,
-  .description {
-    padding: 20px;
-  }
-
-  .description h1,
-  .description3 h1 {
-    font-size: 25px;
-    margin-bottom: 15px;
-  }
-
-  .icons4 {
-    margin-top: 0px;
+    justify-content: center;
+    align-items: center;
     width: 100%;
   }
 }
 
-@media screen and (max-width: 430px) {
-  .main {
-    width: 100%;
-    height: 100%;
+@media screen and (max-width: 650px) {
+  .title{
+    font-size: 25px;
   }
-  .title {
-    top: 30px;
+  .videoBox {
+    width: 45%;
+    border-radius: 30px;
   }
-} */
+}
+
+@media screen and (max-width: 620px) {
+  .videoBox {
+    width: 60%;
+    border-radius: 35px;
+  }
+  .ecnaDetail{
+    font-size: 13px;
+  }
+  .inProgress{
+    font-size: 11px;
+  }
+}
+

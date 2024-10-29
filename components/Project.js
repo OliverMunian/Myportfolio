@@ -191,19 +191,13 @@ function Project() {
           <h1 className={styles.title}>
             ECNA - <span className={styles.italic}>Time is now yours</span>
           </h1>
-          <p
-            style={{
-              color: "white",
-              fontStyle: "italic",
-              marginTop: "10px",
-              fontSize: "18px",
-            }}
-          >
+          <p className={styles.ecnaDetail}>
             Before moving to Sweden, I worked in ambulance in France during many
             years. <br /> <br />
             So I decided to convert myself as a web developer to create my own
-            app to help ambulances companies to have a better organization at work and mainly
-            save time during the day to help more patients. <br />
+            app to help ambulances companies to have a better organization at
+            work and mainly save time during the day to help more patients.{" "}
+            <br />
             I brought them new features to have access to their own vehicle
             fleet and a part of the activity about the company and also the
             activity of their collaborators <br />
@@ -212,13 +206,12 @@ function Project() {
             style={{
               display: "flex",
               alignItems: "center",
-              color: "white",
               fontStyle: "italic",
               marginTop: "10px",
             }}
           >
-            <p>The app is still in progress...</p>
-            <RiToolsFill size={30} />
+            <p className={styles.inProgress}>The app is still in progress...</p>
+            <RiToolsFill size={30} color={'white'} />
           </div>
         </div>
       </div>

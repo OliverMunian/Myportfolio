@@ -85,10 +85,6 @@ function Slider() {
               <p style={{ color: "white" }}>{data.description}</p>
               {data.link}
             </div>
-            {/* <div>
-              <p style={{ color: "white" }}>{data.description}</p>
-            </div>
-            {data.link} */}
           </div>
         </SwiperSlide>
       );
@@ -125,21 +121,8 @@ function Slider() {
         }}
         pagination={true}
         // modules={[EffectCoverFlow, Pagination]}
-        className="mySwiper"
       >
         {allImg}
-        {/* {IMAGES.map((data, i) => (
-            if(data.title){
-                
-            }
-          <SwiperSlide key={i} style={{display:'flex', justifyContent:'center'}}>
-            <div className={styles.swiperSlide}>
-              <Image src={data.src} alt={data.title} className={styles.image} />
-              <p>{data.description}</p>
-              {data.link}
-            </div>
-          </SwiperSlide>
-        ))} */}
       </Swiper>
     </div>
   );
