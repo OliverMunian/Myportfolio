@@ -180,14 +180,14 @@
 @media screen and (max-width: 620px) {
   .video {
     margin-left: 10%;
-    width: 80%;
+    width: 90%;
     flex-direction: column-reverse;
   }
 
   .videoBox {
     margin-top: 20px;
-    width: 50%;
-    border-radius: 40px;
+    width: 60%;
+    border-radius: 38px;
   }
 
   .ecnadescription {
@@ -195,7 +195,7 @@
     width: 95%;
   }
   .title{
-    font-size: 35px;
+    font-size: 30px;
   }
   .ecnaDetail {
     font-size: 13px;
