@@ -54,6 +54,7 @@
 
 .projectDescription:hover {
   opacity: 0.9;
+  width: 100%;
 }
 .link {
   margin-top: 10px;
@@ -66,7 +67,6 @@
   cursor: pointer;
   color: white;
 }
-
 
 /*MEDIA-QUERIES*/
 
@@ -88,7 +88,6 @@
   }
 }
 
-
 @media screen and (max-width: 830px) {
   .container {
     margin-left: 30px;
@@ -99,12 +98,15 @@
 }
 
 @media screen and (max-width: 800px) {
-  .container{
+  .container {
     margin-left: 0;
     margin-top: 20px;
   }
-  .swiperSlide{
+  .swiperSlide {
     width: 100%;
+  }
+  .swiperSlideLocapic {
+    width: 30%;
   }
   .projectDescriptionLocapic {
     font-size: 16px;

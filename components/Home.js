@@ -11,6 +11,7 @@ import Project from "./Project";
 import Tools from "./Tools";
 import Header from "./Header";
 import Video from "./Video";
+import Fpv from "./FPV";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 // import { FaLinkedinIn, FaGithub, FaFileDownload } from "react-icons/fa";
 

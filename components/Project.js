@@ -7,6 +7,7 @@ import weatherApp from "../public/WeatherApp.jpg";
 import dream2car from "../public/dream2car.PNG";
 import qrCodeLocapic from "../public/qrCode_locapic.png";
 import setup from "../public/Setup.png";
+import Fpv from "./FPV";
 import { RiToolsFill } from "react-icons/ri";
 import { IoEarth } from "react-icons/io5";
 import { FaGithub } from "react-icons/fa";
@@ -211,7 +212,7 @@ function Project() {
             }}
           >
             <p className={styles.inProgress}>The app is still in progress...</p>
-            <RiToolsFill size={30} color={'white'} />
+            <RiToolsFill size={30} color={"white"} />
           </div>
         </div>
       </div>
@@ -237,7 +238,7 @@ function Project() {
           </div>
         </div>
         <div className={styles.boxProjects}>
-          <div className={styles.firstPartDecrisption}>
+          <div className={styles.firstPartDescription}>
             <p
               style={{
                 color: "white",
@@ -264,12 +265,13 @@ function Project() {
                 marginTop: "50px",
               }}
             >
-              Swipe right to see the projects{" "}
+              Swipe right/left to see the projects{" "}
               <MdSwipe style={{ marginLeft: "10px" }} size={20} />
             </div>
           </div>
           <Slider />
         </div>
+        <Fpv />
       </div>
     </div>
   );
