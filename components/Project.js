@@ -271,7 +271,6 @@ function Project() {
           <Slider />
         </div>
       </div>
-      {/* <div className={styles.allimg}>{allImg}</div> */}
     </div>
   );
 }

@@ -1,22 +1,11 @@
 .main {
+  width: 100%;
   padding-top: 30px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
   background: linear-gradient(-180deg, #1a2755 30%, #1d94ae);
-}
-
-.aboutme {
-  margin-top: 5%;
-  margin-bottom: 5%;
-  margin-left: 15%;
-  width: 70%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  color: white;
-  text-align: center;
 }
 
 .video {
@@ -56,20 +45,19 @@
   font-style: italic;
 }
 
-
 .ecnadescription {
   margin-left: 15%;
   width: 55%;
 }
 
-.ecnaDetail{
+.ecnaDetail {
   color: white;
   font-style: italic;
   margin-top: 10px;
   font-size: 18px;
 }
 
-.inProgress{
+.inProgress {
   font-style: italic;
   color: white;
 }
@@ -77,32 +65,32 @@
 .otherProjects {
   display: flex;
   flex-direction: column;
-  padding: 100px;
+  padding: 80px;
   width: 100%;
   background-color: #e6585b;
   background: linear-gradient(180deg, transparent, #e6595c 55%);
 }
 
-.projectsFirstPart{
+.projectsFirstPart {
   display: flex;
   align-items: center;
   width: 100%;
 }
 
-.boxProjects{
+.boxProjects {
   display: flex;
   align-items: flex-start;
   margin-top: 30px;
 }
 
-.firstPartDecrisption{
+.firstPartDecrisption {
   color: white;
   font-style: italic;
   width: 65%;
-  font-size:16px
+  font-size: 16px;
 }
 
-.lacapsule{
+.lacapsule {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -146,10 +134,10 @@
 }
 
 @media screen and (max-width: 900px) {
-  .title{
+  .title {
     font-size: 35px;
   }
-  .ecnaDetail{
+  .ecnaDetail {
     font-size: 14px;
   }
 }
@@ -166,7 +154,11 @@
     flex-direction: column;
   }
 
-  .firstPartDecrisption{
+  .otherProjects {
+    padding: 20px;
+  }
+
+  .firstPartDecrisption {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -176,7 +168,7 @@
 }
 
 @media screen and (max-width: 650px) {
-  .title{
+  .title {
     font-size: 25px;
   }
   .videoBox {
@@ -186,15 +178,29 @@
 }
 
 @media screen and (max-width: 620px) {
-  .videoBox {
-    width: 60%;
-    border-radius: 35px;
+  .video {
+    margin-left: 10%;
+    width: 80%;
+    flex-direction: column-reverse;
   }
-  .ecnaDetail{
+
+  .videoBox {
+    margin-top: 20px;
+    width: 50%;
+    border-radius: 40px;
+  }
+
+  .ecnadescription {
+    margin-left: 0;
+    width: 95%;
+  }
+  .title{
+    font-size: 35px;
+  }
+  .ecnaDetail {
     font-size: 13px;
   }
-  .inProgress{
+  .inProgress {
     font-size: 11px;
   }
 }
-
