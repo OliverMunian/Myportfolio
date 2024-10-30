@@ -1,6 +1,8 @@
 import expressicons from "../public/expressjs_icon.svg";
 import githubicons from "../public/Git_logo.png";
 import mongodbicons from "../public/mongodb-icon.svg";
+import html from '../public/html.png'
+import css from '../public/css.png'
 import nodejsicons from "../public/nodejs_icon.svg";
 import reactjsicons from "../public/reactjs-icon.svg";
 import javascripticons from "../public/javascript_logopng.png";
@@ -14,6 +16,8 @@ function Tools() {
   const pictures = [
     { src: expressicons, name: "ExpressJs" },
     { src: githubicons, name: "Git" },
+    { src: html, name: "HTML" },
+    { src: css, name: "CSS" },
     { src: mongodbicons, name: "MongoDb" },
     { src: nodejsicons, name: "NodeJS" },
     { src: reactjsicons, name: "React" },
