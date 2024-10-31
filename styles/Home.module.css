@@ -1,9 +1,8 @@
 .main {
-  background-color: "#ededec";
   display: flex;
   flex-direction: column;
-  margin: 0;
+  /* margin: 0;
   top: 0;
-  padding: 0;
+  padding: 0; */
   width: 100%;
 }
