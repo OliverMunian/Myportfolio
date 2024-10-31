@@ -38,6 +38,8 @@
 
 .summerHouseBox {
   width: 35%;
+  display: flex;
+  justify-content: center;
   border-radius: 40px;
   border: 1px solid black;
   overflow: hidden;
@@ -99,5 +101,14 @@
   }
   .summerHouseBox{
     border-radius: 30px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .summerHouseBox{
+    border-radius: 20px;
+  }
+  .yumsBox{
+    border-radius: 20px;
   }
 }

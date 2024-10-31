@@ -2,6 +2,7 @@ import styles from "../styles/fpv.module.css";
 import MuxPlayer from "@mux/mux-player-react";
 import { TbDrone } from "react-icons/tb";
 import { FaYoutube } from "react-icons/fa";
+import { IoGameController } from "react-icons/io5";
 
 function Fpv() {
   return (
@@ -26,7 +27,7 @@ function Fpv() {
             differents places.
             <br />
             <br />
-            Let me now if you have some interested project that you want to
+            Let me know if you have some interested project that you want to
             realize
           </p>
         </div>
@@ -84,7 +85,7 @@ function Fpv() {
             <div className={styles.yumsBox}>
               <MuxPlayer
                 streamType="on-demand"
-                playbackId="HFTH3FGej902oleWW3c7ycJOU7UYAYuBIP1Lv027nQcls"
+                playbackId="EUkmpGCONFNwiDPqUjqNwJUPeTUmIxZoub4KrJCkgWs"
                 metadataViewerUserId="Placeholder (optional)"
                 primaryColor="transparent"
                 secondaryColor="transparent"
@@ -94,8 +95,12 @@ function Fpv() {
                   "--controls": "none",
                 }}
               />
-              <div className={styles.videosDescription}>
-                <p> 📍 Dhërmi - Albania 🇦🇱 </p>
+              <div
+                className={styles.videosDescription}
+                style={{ alignItems: "center" }}
+              >
+                <p> Training - Liftoff </p>
+                <IoGameController style={{ marginLeft: "5px" }} />
               </div>
             </div>
           </div>
