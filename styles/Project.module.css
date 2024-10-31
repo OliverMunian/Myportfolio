@@ -176,7 +176,7 @@
 
 @media screen and (max-width: 620px) {
   .video {
-    margin-left: 10%;
+    margin-left: 5%;
     width: 90%;
     flex-direction: column-reverse;
   }
@@ -184,7 +184,7 @@
   .videoBox {
     margin-top: 20px;
     width: 60%;
-    border-radius: 38px;
+    border-radius: 55px;
   }
 
   .ecnadescription {
@@ -199,5 +199,19 @@
   }
   .inProgress {
     font-size: 11px;
+  }
+}
+
+
+@media screen and (max-width: 550px) {
+  .videoBox {
+    border-radius: 40px;
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  .videoBox {
+    border-radius: 35px;
   }
 }
