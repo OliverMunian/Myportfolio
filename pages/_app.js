@@ -3,9 +3,9 @@ import Head from "next/head";
 
 function App({ Component, pageProps }) {
   return (
-    <>
+    <div>
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
         <title>Olivier Malahel</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,7 +16,7 @@ function App({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Component {...pageProps} />
-    </>
+    </div>
   );
 }
 
