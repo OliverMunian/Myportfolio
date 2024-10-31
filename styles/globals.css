@@ -7,11 +7,6 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-html {
-  width: 100%;
-  overflow-x: hidden;
-}
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -19,7 +14,7 @@ html {
 }
 
 @media (max-width: 768px) {
-  body, html {
+  body {
     overflow-x: hidden;
   }
 }
