@@ -11,6 +11,13 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      clipPath: {
+        intercalaire:
+          "polygon(0% 27%, 31% 28%, 60% 1%, 100% 0%, 100% 100%, 1% 100%)",
+      },
+      fontFamily: {
+        sans: ["Helvetica", "Arial", "sans-serif"],
+      },
     },
   },
   plugins: [],
