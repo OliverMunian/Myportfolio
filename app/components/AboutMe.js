@@ -140,8 +140,7 @@ function AboutMe(props) {
               <div className="flex items-end justify-between flex-grow">
                 <div className="flex flex-col justify-end h-full">
                   <h1 className="font-Prompt font-semibold text-5xl">
-                    {" "}
-                    <span className="font-light">I'm,</span> <br />
+                    <span className="font-light">I am,</span> <br />
                     Olivier <br />
                     Malahel
                   </h1>

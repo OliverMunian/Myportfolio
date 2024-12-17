@@ -152,7 +152,7 @@ function Video() {
                             with precision and passion using an FPV drone. This
                             video takes you soaring over Ksamil, with its
                             turquoise waters and idyllic beaches, Gjirokastër,
-                            the "City of Stone" steeped in history and charm,
+                            the City of Stone steeped in history and charm,
                             and Dhërmi, a gem of the Albanian Riviera boasting
                             majestic mountains and pristine coves.
                           </p>
