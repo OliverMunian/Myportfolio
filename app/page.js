@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Video from "./components/Video";
 import AboutMe from "./components/AboutMe";
 

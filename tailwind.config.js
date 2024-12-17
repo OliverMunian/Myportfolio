@@ -17,6 +17,11 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Helvetica", "Arial", "sans-serif"],
+        Prompt: ["Prompt", "sans-serif"],
+      },
+      backgroundImage: {
+        'iphone-wallpaper': "url('/iphone.png')",
+        'sunsetparis-wallpaper': "url('/panorama-paris-sunset.jpg')"
       },
     },
   },
