@@ -115,7 +115,7 @@ function Video() {
                   </div>
                 </div>
 
-                <div className="flex justify-between w-full h-2/4 border-2 border-green-500">
+                <div className="flex justify-between w-full h-2/4">
                   <div
                     className={`flex overflow-hidden w-3/4 border-none transition
                     ${
