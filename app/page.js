@@ -1,101 +1,217 @@
+"use client";
+//Components
+import AboutMe from "./components/AboutMe";
+import HireMe from "./components/HireMe";
+import Projects from "./components/Projects";
+import ProjectsPart from "./components/ProjectPart";
+import Contact from "./components/Contact";
+//Assets
+import Me from "../public/Moi.png";
+import Stockholm from "../public/Map.jpeg";
+import Header from "./components/Header";
+import Background from "../public/background.png";
+import Mountain from "../public/Mountain.png";
+// import Myself from "./components/Myself";
+//Extensions
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
+import Typewriter from "typewriter-effect";
+import DecryptedText from "./components/DecryptedText";
+//Icons
+import { PiQuotesFill } from "react-icons/pi";
+import { TfiArrowTopRight } from "react-icons/tfi";
+import { TbDrone } from "react-icons/tb";
+import { FaCode } from "react-icons/fa6";
+import { IoLogoGithub } from "react-icons/io";
+import { FaLinkedinIn } from "react-icons/fa";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  // const [activeHeader, setActiveHeader] = useState("Home");
+  const [active, setActive] = useState("About me");
+  const [selectedHeader, setSelectedHeader] = useState("Home");
+  const [currentText, setCurrentText] = useState("Fullstack developer");
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentText((prevText) =>
+        prevText === "Fullstack developer" ? "FPV Pilot" : "Fullstack developer"
+      );
+    }, 5000); // Change every 6 seconds
+
+    // Cleanup the interval on component unmount
+    return () => clearInterval(intervalId);
+  }, []);
+
+  const icons = [
+    {
+      icon: <FaCode color="black" className="text-3xl max-lg:text-2xl" />,
+    },
+    {
+      icon: <TbDrone color="black" className="text-3xl max-lg:text-2xl" />,
+    },
+    {
+      icon: (
+        <IoLogoGithub className="text-black text-3xl max-lg:text-2xl hover:text-white hover:scale-150 transition" />
+      ),
+      link: "https://github.com/OliverMunian",
+    },
+    {
+      icon: (
+        <FaLinkedinIn className="text-black text-2xl max-lg:text-2xl hover:text-white hover:scale-150 transition" />
+      ),
+      link: "https://www.linkedin.com/in/oliviermalahel/",
+    },
+  ];
+
+  const buttons = [
+    {
+      title: "About me",
+      link: "",
+      icon: <TfiArrowTopRight color="'white" className="text-2xl ml-2" />,
+    },
+    { title: "Hire me", link: "" },
+  ];
+
+  const activeIndex = buttons.findIndex((btn) => btn.title === active);
+
+  const iconsDisplay = icons.map((el, i) => {
+    return (
+      <div
+        key={i}
+        className="bg-purple-500 size-[50px] rounded-full flex items-center justify-center mt-5 max-lg:size-[40px]"
+      >
+        <a href={el.link} target="blank">
+          {el.icon}
+        </a>
+      </div>
+    );
+  });
+
+  const buttonsDisplay = buttons.map((button, i) => {
+    return (
+      <div key={i} className="w-[50%] z-10">
+        <button
+          className="flex justify-center items-center w-[100%]"
+          onClick={() => setActive(button.title)}
+        >
+          <h1
+            className={`font-inter font-light ${
+              active === button.title ? "font-medium" : ""
+            }`}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+            {button.title}
+          </h1>
+          {button.icon}
+        </button>
+      </div>
+    );
+  });
+
+  return (
+    <div className="w-full flex items-center justify-center flex-col bg-white">
+      <div
+        className={`relative w-full h-screen flex flex-col items-center justify-between max-lg:h-[100dvh] max-lg:justify-start bg-center bg-cover bg-no-repeat z-0`}
+        style={{ backgroundImage: `url(${Background.src})` }}
+      >
+        <div
+          className="absolute w-full h-full bottom-0 z-10 bg-bottom bg-contain bg-no-repeat"
+          style={{ backgroundImage: `url(${Mountain.src})` }}
+        ></div>
+
+        <Header className="z-30" onHeaderChange={setSelectedHeader} />
+
+        {selectedHeader == "Home" && (
+          <div className="w-full h-full relative flex flex-col items-center justify-between z-30">
+            {/* <div className="absolute">
+              <h1 className="max-sm:block hidden text-red-500 text-4XL">SM</h1>
+              <h1 className="max-md:block hidden text-red-500 text-4XL">MD</h1>
+              <h1 className="max-lg:block hidden text-red-500 text-4XL">LG</h1>
+              <h1 className="max-xl:block hidden text-red-500 text-4XL">XL</h1>
+              <h1 className="max-2xl:block hidden text-red-500 text-4XL">2XL</h1>
+
+          </div> */}
+            <div className="w-full pt-2 max-sm:mt-[20%]">
+              <h1 className="text-white text-8xl text-center font-inter font-medium max-lg:text-7xl max-sm:text-[54px] ">
+                I'm <span className="text-purple-500">Olivier Malahel</span>,
+                <br />
+                <Typewriter
+                  options={{
+                    strings: ["Fullstack developer", "FPV Pilot"],
+                    autoStart: true,
+                    pauseFor: 100,
+                    loop: true,
+                    cursor: "_",
+                    color: "#ffffff",
+                    deleteSpeed: "20",
+                  }}
+                />
+                {/* <DecryptedText
+                  texts={["Fullstack Developer", "FPV Pilot"]} // Texte à alterner
+                  speed={100} // Vitesse de l'animation
+                  delay={5000} // Délai de 5 secondes avant de changer le texte
+                  className="revealed text-white font-inter text-8xl"
+                /> */}
+              </h1>
+            </div>
+
+            <div className="relative flex justify-between w-[100%] max-lg:justify-center max-lg:hidden overflow-clip p-5">
+              <div className="w-1/4 flex flex-col justify-center items-center p-4">
+                <div className="w-full flex items-start justify-start">
+                  <PiQuotesFill
+                    color="white"
+                    className="text-3xl scale-x-[-1] "
+                  />
+                </div>
+                <p className="text-white font-inter font-normal text-2xl">
+                  Hi, I'm here to bring your projects to
+                  <span className="text-purple-500 font-bold"> LIFE</span> !
+                </p>
+                <div className="w-full flex items-start justify-start">
+                  <PiQuotesFill color="white" className="text-3xl" />
+                </div>
+              </div>
+
+              <div className="w-1/4 flex justify-center items-center flex-col">
+                {iconsDisplay}
+              </div>
+            </div>
+
+            <div className="top-0 z-20 absolute h-full w-1/2 flex items-end justify-center overflow-hidden max-lg:w-full">
+              <div className="absolute w-[95%] aspect-square bg-purple-500 z-0 rounded-full top-[55%] max-sm:w-[95%]  max-sm:top-[65%]"></div>
+
+              <Image
+                src={Me}
+                alt="Ma photo de profil"
+                className="z-10 w-[85%] max-sm:w-[100%] max-md:w-[90%] max-[820px]:w-[80%] max-lg:w-[70%] max-xl:w-[85%]"
+              />
+
+              <div className="absolute flex justify-center items-center h-[100px] w-full z-20 -mt-5">
+                <div
+                  className="relative border-white border-[0.5px] w-[60%] h-[80%] rounded-full backdrop-blur-lg flex items-center justify-around p-4 
+          max-md:w-[80%]"
+                >
+                  <motion.div
+                    className="absolute w-[45%] h-[75%] bg-black rounded-full m-[2.5%]"
+                    initial={false}
+                    animate={{
+                      left: `${activeIndex * 50}%`,
+                    }}
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                  />
+                  {buttonsDisplay}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {selectedHeader == "Projects" && <Projects />}
+        {selectedHeader == "Contact" && <Contact/>}
+      </div>
+      {active === "About me" && selectedHeader == "Home" ? <AboutMe /> : <></>}
+      {active === "Hire me" && selectedHeader == "Home" ? <HireMe /> : <></>}
+      {selectedHeader == "Projects" ? <ProjectsPart /> : <></>}
     </div>
   );
 }

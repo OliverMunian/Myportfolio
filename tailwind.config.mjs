@@ -7,10 +7,16 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      fontFamily: {
+        inter: ["var(--font-inter)", "sans-serif"],
       },
+      screens: {
+        'xs': '400px', // Crée un breakpoint "xs",
+      },
+      backgroundImage: {
+        'map': "url('/Map.jpeg')",
+        'panorama': "url('/panorama-paris-sunset copie.jpg')",
+      }
     },
   },
   plugins: [],
