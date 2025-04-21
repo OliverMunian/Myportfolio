@@ -14,7 +14,7 @@ export default {
         'xs': '400px', // Crée un breakpoint "xs",
       },
       backgroundImage: {
-        'map': "url('/Map.jpeg')",
+        'map': "url('/map.jpeg')",
         'panorama': "url('/panorama-paris-sunset copie.jpg')",
       }
     },
