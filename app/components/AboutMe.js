@@ -17,8 +17,6 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-//Assets
-import Map from "../../public/Map.jpeg";
 
 export default function AboutMe() {
   const [appointment, setAppointment] = useState(false);

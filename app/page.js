@@ -7,7 +7,6 @@ import ProjectsPart from "./components/ProjectPart";
 import Contact from "./components/Contact";
 //Assets
 import Me from "../public/Moi.png";
-import Stockholm from "../public/Map.jpeg";
 import Header from "./components/Header";
 import Background from "../public/background.png";
 import Mountain from "../public/Mountain.png";
