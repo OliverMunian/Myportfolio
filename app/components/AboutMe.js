@@ -246,7 +246,7 @@ export default function AboutMe() {
 
   return (
     <div className="w-full">
-      <div className="bg-[#171717] w-full p-10 rounded-b-3xl max-md:rounded-none">
+      <div className="bg-[#171717] w-full p-10 rounded-b-3xl max-md:rounded-none max-sm:p-6">
         <div className="w-full flex items-center justify-between max-lg:flex-col max-lg:items-start">
           <div>
             <h1 className="text-white text-5xl font-inter font-medium max-sm:text-4xl">
@@ -300,7 +300,7 @@ export default function AboutMe() {
       </div>
 
       <div className="flex flex-col bg-white w-full">
-        <div className="w-full flex flex-col items-end justify-end py-8 px-10 ">
+        <div className="w-full flex flex-col items-end justify-end py-8 px-10 max-sm:px-6 ">
           <h1 className="text-black text-5xl font-inter font-medium text-left max-sm:text-4xl">
             Here I am !<br />
             <span className="text-purple-500 ">My location</span>
@@ -308,7 +308,7 @@ export default function AboutMe() {
           <div className="flex items-center justify-center w-full py-3">
             <div className="border-b-[1px] border-purple-500 w-[40%] max-xl:w-[35%]"></div>
             <div className="flex items-center justify-center mx-2">
-              <h1 className="text-4xl text-black text-center font-inter font-medium mr-3 max-2xl:text-2xl max-xl:text-xl max-md:text-[13px]">
+              <h1 className="text-4xl text-black text-center font-inter font-medium mr-3 max-2xl:text-2xl max-xl:text-xl max-md:text-[13px] max-sm:text-[11px] max-[430px]:text-[8px]">
                 CDG - ARN
               </h1>
             </div>

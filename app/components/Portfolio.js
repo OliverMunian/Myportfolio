@@ -16,6 +16,7 @@ import { IoMdCloseCircle } from "react-icons/io";
 //Extensions
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Link from "next/link";
 import MuxPlayer from "@mux/mux-player-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
@@ -179,45 +180,11 @@ export default function Portfolio() {
   });
 
   const displayProjectsSwiper = projects.map((project, i) => {
-    if (project.title == "Albania Trip") {
-      return (
-        <SwiperSlide
-          key={i}
-          className="flex flex-col justify-between w-full border-white border-[0.75px] p-3 rounded-lg max-md:w-full max-md:my-5"
-        >
-          <div className=" flex items-center justify-center relative w-full rounded-xl overflow-hidden drop-shadow-xl shadow-xl">
-            <MuxPlayer
-              className="w-[100%]"
-              streamType="on-demand"
-              playbackId="mUvCLZfO8q00v00uDIcrFREa00lUFdZMyKvQKSUJSDOI400"
-              metadataViewerUserId="Placeholder (optional)"
-              primaryColor="transparent"
-              secondaryColor="transparent"
-              autoPlay="muted"
-              loop
-              style={{
-                "--controls": "none",
-              }}
-            />
-            <div
-              className={`flex items-center justify-center size-full backdrop-blur-lg absolute p-10 transition-opacity duration-300 ${
-                hover === i ? "opacity-0 cursor-pointer" : "opacity-100"
-              }`}
-              onMouseOver={() => setHover(i)}
-              onMouseLeave={() => setHover(false)}
-            >
-              <Image src={project.src} alt={project.alt} className="w-[45%]" />
-            </div>
-          </div>
-          {project.description}
-        </SwiperSlide>
-      );
-    }
     if (project.title == "ECNA") {
       return (
         <SwiperSlide
           key={i}
-          className="flex flex-col justify-between  border-white border-[0.75px] p-3 rounded-lg max-md:w-full max-md:my-5"
+          className="flex flex-col justify-between border-white border-[0.75px] p-3 rounded-lg max-md:w-full max-md:my-5"
         >
           <div className="flex items-center justify-center relative w-full rounded-xl overflow-hidden drop-shadow-xl shadow-xl">
             <Image src={project.src} alt={project.alt} />
@@ -229,7 +196,7 @@ export default function Portfolio() {
               onMouseLeave={() => setHover(false)}
               onClick={() => setFullScreen(true)}
             >
-              <Image src={project.layout} alt={project.alt_layout} />
+              <Image src={project.layout} alt={project.alt_layout}/>
             </div>
           </div>
           <div className="flex items-center justify-center mt-4">
@@ -244,7 +211,7 @@ export default function Portfolio() {
         className="w-full border-white border-[0.75px] p-3 rounded-lg max-md:w-full max-md:my-5"
       >
         <div className="flex items-center justify-center relative w-full rounded-xl overflow-hidden drop-shadow-xl shadow-xl">
-          <Image src={project.src} alt={project.alt} />
+          <Image src={project.src} alt={project.alt} className="h-[100%]"/>
           <div
             className={`flex items-center justify-center w-full h-full backdrop-blur-lg absolute p-10 transition-opacity duration-300 ${
               hover === i ? "opacity-0 cursor-pointer" : "opacity-100"
@@ -252,9 +219,9 @@ export default function Portfolio() {
             onMouseOver={() => setHover(i)}
             onMouseLeave={() => setHover(false)}
           >
-            <a href={project.link} target="_blank">
-              <Image src={project.layout} alt={project.alt_layout} />
-            </a>
+            <Link href={project.link} target="_blank" className="flex items-center justify-center">
+              <Image src={project.layout} alt={project.alt_layout} className="w-8/12"/>
+            </Link>
           </div>
         </div>
         <div className="flex items-center justify-center mt-4">
@@ -265,7 +232,7 @@ export default function Portfolio() {
   });
 
   return (
-    <div className="flex flex-col bg-[#171717] w-full rounded-xl p-10">
+    <div className="flex flex-col bg-[#171717] w-full rounded-xl p-10 max-sm:p-6">
       <h1 className="font-inter font-medium text-5xl mt-5 mb-5">
         Let's have a look at <br />
         <span className="text-purple-500"> my Portfolio</span>
@@ -273,7 +240,7 @@ export default function Portfolio() {
       <div className="flex justify-between items-stretch w-full max-md:hidden">
         {displayProjects}
       </div>
-      <div className="flex items-start justify-start w-full  border-yellow-500 border-2 md:hidden">
+      <div className="flex items-start justify-start w-full md:hidden">
         <Swiper
           pagination={true}
           modules={[Pagination]}
@@ -336,7 +303,7 @@ export default function Portfolio() {
               />
             </div>
             <div className="w-full flex items-start justify-between p-10">
-              <div className="relative flex items-center justify-center border-2 border-yellow-500 w-[20%]">
+              <div className="relative flex items-center justify-center w-[20%]">
                 <Image
                   src={Iphone}
                   alt="iphone_frame"

@@ -124,7 +124,7 @@ export default function HireMe() {
             {event.town}, {event.date}
           </p>
         </div>
-        <div className="flex justify-start items-stretch w-[65%] max-sm:flex-row-reverse max-sm:w-full max-sm:justify-end">
+        <div className="flex justify-start items-stretch w-[65%] max-sm:flex-row-reverse max-sm:w-full max-sm:justify-between">
           <div className="flex flex-col items-center ml-[20%] mr-[10%]  max-sm:mr-0 ">
             <div className="flex items-center justify-center border-2 border-dashed border-black rounded-full p-2 w-[60px] h-[60px]">
               <div

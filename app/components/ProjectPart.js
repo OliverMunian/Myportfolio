@@ -49,7 +49,7 @@ export default function ProjectsPart() {
       title: "Nordic Ambient Lightning",
       src: NAL,
       alt: "Nordic ambient Lightning website",
-      link: "https://olivia-bmn.vercel.app/",
+      link: "https://nordic-ambient-lightning.vercel.app/",
       description: (
         <h1 className="text-base font-inter font-normal text-center">
           I decide to create my own lamp brand entirely design by me

@@ -114,8 +114,8 @@ export default function Home() {
         style={{ backgroundImage: `url(${Background.src})` }}
       >
         <div
-          className="absolute w-full h-full bottom-0 z-10 bg-bottom bg-contain bg-no-repeat"
-          style={{ backgroundImage: `url(${Mountain.src})` }}
+          className="absolute w-full h-full bottom-0 z-10 md:bg-contain max-md:bg-size-[10%]"
+          style={{ backgroundImage: `url(${Mountain.src})`, backgroundRepeat:'no-repeat', backgroundPosition:'bottom'}}
         ></div>
 
         <Header className="z-30" onHeaderChange={setSelectedHeader} />

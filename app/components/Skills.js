@@ -44,16 +44,15 @@ export default function Skills() {
     },
     {
       title: "NextJs",
-      icons: <RiNextjsLine className="text-6xl text-purple-500 max-lg:text-3xl" />,
+      icons: (
+        <RiNextjsLine className="text-6xl text-purple-500 max-lg:text-3xl" />
+      ),
     },
   ];
 
   const languagesToolsDisplay = languagesTools.map((language, i) => {
     return (
-      <div
-        key={i}
-        className="flex flex-col items-center justify-start w-[10%] border-red-500"
-      >
+      <div key={i} className="flex flex-col items-center justify-start w-full">
         <div>{language.icons}</div>
         <h1 className="text-black font-inter font-normal text-center max-lg:text-xs max-sm:text-[9px]">
           {language.title}
@@ -62,7 +61,7 @@ export default function Skills() {
     );
   });
   return (
-    <div className="bg-white w-full p-10 flex flex-col">
+    <div className="bg-white w-full p-10 flex flex-col max-sm:p-6">
       <div className="w-full flex flex-col items-end">
         <div className="w-full flex items-start justify-end">
           <PiQuotesFill color="black" className="text-xl scale-x-[-1] mr-2" />
@@ -77,7 +76,9 @@ export default function Skills() {
           perspective and give life to all of your projects
         </h3>
       </div>
-      <div className="flex justify-between mt-7">{languagesToolsDisplay}</div>
+      <div className="items-center justify-center grid grid-cols-8 gap-y-6 mt-7 max-sm:grid-cols-4">
+        {languagesToolsDisplay}
+      </div>
     </div>
   );
 }
