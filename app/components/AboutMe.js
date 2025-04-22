@@ -300,29 +300,28 @@ export default function AboutMe() {
       </div>
 
       <div className="flex flex-col bg-white w-full">
-        <div className="w-full flex flex-col items-end justify-end  py-5 px-10 ">
-          <h1 className="text-black text-5xl font-inter font-medium text-left">
+        <div className="w-full flex flex-col items-end justify-end py-8 px-10 ">
+          <h1 className="text-black text-5xl font-inter font-medium text-left max-sm:text-4xl">
             Here I am !<br />
             <span className="text-purple-500 ">My location</span>
           </h1>
-          {/* <div className="flex items-center justify-center w-full">
+          <div className="flex items-center justify-center w-full py-3">
             <div className="border-b-[1px] border-purple-500 w-[40%] max-xl:w-[35%]"></div>
-            <div className="flex items-center mx-2">
-              <h1 className="text-4xl text-black font-inter font-medium mr-3 max-2xl:text-2xl max-xl:text-xl">
+            <div className="flex items-center justify-center mx-2">
+              <h1 className="text-4xl text-black text-center font-inter font-medium mr-3 max-2xl:text-2xl max-xl:text-xl max-md:text-[13px]">
                 CDG - ARN
               </h1>
             </div>
 
             <div className="border-b-[1px] border-purple-500 w-[40%] max-xl:w-[35%]"></div>
             <RiPlaneLine className="text-purple-500 rotate-90 text-6xl max-xl:text-3xl" />
-          </div> */}
+          </div>
         </div>
 
         <div className="w-full relative flex items-center justify-center bg-panorama bg-cover bg-center h-[600px]">
           <div className="absolute w-full h-full top-0 left-0 bg-map bg-cover bg-center gradientImage flex items-end justify-end"></div>
-          <div className="absolute top-0 w-full h-[30px] bg-white z-20 rounded-b-3xl"></div>
-          <div className="absolute size-full flex flex-col items-end backdrop-blur-[7px] px-5 py-10">
-            <div className="flex items-center justify-center w-full">
+          <div className="size-full flex flex-col items-end backdrop-blur-[5px] px-5 py-10 max-md:items-start">
+            {/* <div className="flex items-center justify-center w-full">
               <div className="border-b-[1px] border-white w-[40%] max-xl:w-[35%]"></div>
               <div className="flex items-center mx-2">
                 <h1 className="text-4xl text-white font-inter font-bold mr-3 max-2xl:text-2xl max-xl:text-xl max-sm:text-base">
@@ -332,18 +331,16 @@ export default function AboutMe() {
 
               <div className="border-b-[1px] border-white w-[40%] max-xl:w-[35%]"></div>
               <RiPlaneLine className="text-white rotate-90 text-6xl max-xl:text-3xl" />
-            </div>
+            </div> */}
 
-
-
-            <h1 className="text-white text-6xl font-inter font-medium uppercase">
+            <h1 className="text-white text-6xl font-inter font-medium uppercase max-sm:text-4xl">
               Stockholm
             </h1>
             <p className="text-white font-inter font-medium text-left mt-5">
-              "Aurevoir Paris" - "Hej, välkommen till Sverige !"
+              "Aurevoir Paris" - "Hej! Välkommen till Sverige"
             </p>
-            <div className="w-[60%]">
-              <p className="text-white text-lg font-inter font-normal pt-5 text-right">
+            <div className="w-[60%] max-md:w-full">
+              <p className="text-white text-lg font-inter font-normal pt-5 text-right max-md:text-base max-md:text-left">
                 Excited to start this new chapter as a fullstack developer in a
                 dynamic and innovative environment. <br />
                 I'm eager to tackle new challenges, grow my skills, and
