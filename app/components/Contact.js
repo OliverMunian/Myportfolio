@@ -25,12 +25,12 @@ export default function ContactForm() {
 
     // Validation
     const newErrors = {};
-    if (!form.name) newErrors.name = "Prénom requis";
-    if (!form.lastname) newErrors.lastname = "Nom requis";
+    if (!form.name) newErrors.name = "Name is required";
+    if (!form.lastname) newErrors.lastname = "Lastname is required";
     if (!form.email || !emailRegex.test(form.email))
-      newErrors.email = "Email invalide";
-    if (!form.subject) newErrors.subject = "Sujet requis";
-    if (!form.message) newErrors.message = "Message requis";
+      newErrors.email = "Invalid email";
+    if (!form.subject) newErrors.subject = "The subject is required";
+    if (!form.message) newErrors.message = "The message is required";
 
     setErrors(newErrors);
 
@@ -42,7 +42,7 @@ export default function ContactForm() {
           {
             method: "POST",
             headers: {
-              "Content-Type": "application/json", // ← important
+              "Content-Type": "application/json",
             },
             body: JSON.stringify(form),
           }
@@ -90,7 +90,7 @@ export default function ContactForm() {
             color: "white",
             borderRadius: "10px",
             padding: "10px",
-            marginTop:'5px'
+            marginTop: "5px",
           },
         });
         setSubmitted(false);
@@ -99,7 +99,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="flex flex-col relative z-20 mb-5 w-full border-4 border-yellow-500 max-sm:px-6">
+    <div className="flex flex-col relative z-20 mb-5 w-full max-sm:px-6">
       <div className="w-full flex justify-center">
         <h1 className="text-3xl font-bold">Contact me</h1>
       </div>
