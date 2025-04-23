@@ -100,9 +100,9 @@ export default function ContactForm() {
 
   return (
     <div className="flex flex-col relative z-20 mb-5 w-full max-sm:px-6">
-      <div className="w-full flex justify-center">
+      {/* <div className="w-full flex justify-center">
         <h1 className="text-3xl font-bold">Contact me</h1>
-      </div>
+      </div> */}
       <form
         onSubmit={handleSubmit}
         className="relative w-full max-w-2xl mx-auto p-4 sm:p-6 backdrop-blur-sm border-purple-500 border-[1px] shadow-md rounded-xl space-y-4"
