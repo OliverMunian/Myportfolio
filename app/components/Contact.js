@@ -38,7 +38,7 @@ export default function ContactForm() {
       setSubmitted(true);
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_URL_APP}/contact`,
+          `${process.env.NEXT_PUBLIC_URL_APP}/api/contact`,
           {
             method: "POST",
             headers: {
