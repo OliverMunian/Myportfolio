@@ -8,7 +8,9 @@ import NALLogo from "../../public/NAL/Moose.png";
 import { TbDrone } from "react-icons/tb";
 import { RxCrossCircled } from "react-icons/rx";
 //Images
-import Apex5 from "../../public/Drone/Drone_Apex5.png";
+import Apex5 from "../../public/Drone/Drone_Apex5(1).png";
+import CineonC35 from "../../public/Drone/Cineon_c35(copie).png";
+import Manta6 from "../../public/Drone/Manta6(1).png";
 //Extensions
 import Image from "next/image";
 import { useState, useEffect } from "react";
@@ -77,10 +79,10 @@ export default function ProjectsPart() {
       alt: "Drone Apex 5",
       description: (
         <>
-          <h1 className="font-inter text-white text-lg underline">
+          <h1 className="font-inter text-white text-lg underline  max-sm:text-[12px]">
             Mid-range/Freestyle:
           </h1>
-          <p className="text-white font-inter text-center ">
+          <p className="text-white font-inter text-center max-sm:text-[12px] ">
             Tracking of person or vehicle, sport/dynamic video
           </p>
         </>
@@ -88,20 +90,36 @@ export default function ProjectsPart() {
       title: "Apex 5",
     },
     {
-      src: Apex5,
+      src: CineonC35,
       alt: "Cineon c35",
       description: (
         <>
-          <h1 className="font-inter text-white text-lg underline">
+          <h1 className="font-inter text-white text-lg underline max-sm:text-[12px]">
             Short-range/Cinematic:
           </h1>
-          <p className="text-white font-inter text-center ">
+          <p className="text-white font-inter text-center max-sm:text-[12px] ">
             Slow tracking person or vehicle, pass trough small gaps, and smooth
             cinematic.Perfect for your events
           </p>
         </>
       ),
       title: "Cineon c35",
+    },
+    {
+      src: Manta6,
+      alt: "Manta6",
+      description: (
+        <>
+          <h1 className="font-inter text-white text-lg underline  max-sm:text-[12px]">
+            Long-range/Cinematic:
+          </h1>
+          <p className="text-white font-inter text-center  max-sm:text-[12px]">
+            Provides the drone to go really far away and capture landscape and
+            cinematic view
+          </p>
+        </>
+      ),
+      title: "Manta 6",
     },
   ];
 
@@ -129,15 +147,10 @@ export default function ProjectsPart() {
         }`}
       >
         <div className="flex flex-col items-center justify-center">
-          <h1 className="font-inter text-3xl font-bold ">{service.title}</h1>
-          <br />
+          <h1 className="font-inter text-3xl font-bold max-sm:text-xl mb-3">{service.title}</h1>
           {service.description}
         </div>
-        <Image
-          src={service.src}
-          alt={service.alt}
-          className="w-1/3 border-white border-[1px] rounded-xl"
-        />
+        <Image src={service.src} alt={service.alt} className="w-1/3 max-sm:w-1/2" />
       </div>
     );
   });
@@ -153,7 +166,7 @@ export default function ProjectsPart() {
     },
     {
       playbackId: "ksvTIzfSe9I02bR01CHxLYvARD8pH4bKwR00bl5KKUqRrY",
-      description: "Beginning freestyle training",
+      description: "Training in tight spaces",
     },
   ];
   const displayProjects = myProject.map((project, i) => {
@@ -385,16 +398,153 @@ export default function ProjectsPart() {
       </div>
 
       {infoDrone && (
-        <div className="fixed justify-center items-center top-0 w-full h-full backdrop-blur-xl z-30 transition">
-          <div className="absolute bg-black opacity-45 w-full h-full z-20"></div>
-          <div className="flex justify-end w-full py-5 px-6">
-            <RxCrossCircled
-              onClick={() => setInfoDrone(false)}
-              className="text-white text-5xl hover:cursor-pointer z-40"
-            />
-          </div>
-          <div className="flex flex-col items-center justify-center">
-            {droneServiceDisplay}
+        <div className="fixed top-0 left-0 w-full h-full z-40 flex flex-col items-center justify-center backdrop-blur-xl overflow-hidden">
+          <div className="absolute bg-black opacity-45 w-full h-full z-10"></div>
+          <div className="flex flex-col justify-center items-start h-full w-full z-30">
+            <div className="flex justify-end w-full py-5 px-6">
+              <RxCrossCircled
+                onClick={() => setInfoDrone(false)}
+                className="text-white text-5xl hover:cursor-pointer z-40"
+              />
+            </div>
+            <div className="h-full pb-12 overflow-y-auto w-full px-4">
+              {/* Zone scrollable */}
+              <div className="flex flex-col items-center justify-start">
+                <h1 className="text-2xl sm:text-3xl font-bold mb-4 text-center text-white">
+                  Drone Fleet
+                </h1>
+                {droneServiceDisplay}
+              </div>
+              <div className="p-4 sm:p-6 max-w-7xl mx-auto z-30">
+                <h1 className="text-2xl sm:text-3xl font-bold mb-4 text-center text-white">
+                  Drone Service Pricing
+                </h1>
+
+                {/* Scroll horizontal en mobile */}
+                <div className="overflow-x-auto">
+                  <table className="w-full border border-gray-300 text-sm text-left bg-white text-black">
+                    <thead className="bg-gray-100 text-xs sm:text-sm">
+                      <tr>
+                        <th className="p-2 sm:p-3 border">Drone Type</th>
+                        <th className="p-2 sm:p-3 border">Service</th>
+                        <th className="p-2 sm:p-3 border">
+                          Estimated Duration
+                        </th>
+                        <th className="p-2 sm:p-3 border">Price (excl. tax)</th>
+                        <th className="p-2 sm:p-3 border">Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {/* Freestyle */}
+                      <tr>
+                        <td className="p-2 sm:p-3 border">Freestyle</td>
+                        <td className="p-2 sm:p-3 border">
+                          Showreel / Clip / Sport Session
+                        </td>
+                        <td className="p-2 sm:p-3 border">1–2 hours</td>
+                        <td className="p-2 sm:p-3 border">€250 – €400</td>
+                        <td className="p-2 sm:p-3 border">
+                          Dynamic and stylish shots
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="p-2 sm:p-3 border"></td>
+                        <td className="p-2 sm:p-3 border">Half-day package</td>
+                        <td className="p-2 sm:p-3 border">~4 hours</td>
+                        <td className="p-2 sm:p-3 border">€600</td>
+                        <td className="p-2 sm:p-3 border">
+                          Multiple locations or sequences
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="p-2 sm:p-3 border"></td>
+                        <td className="p-2 sm:p-3 border">Full-day package</td>
+                        <td className="p-2 sm:p-3 border">~8 hours</td>
+                        <td className="p-2 sm:p-3 border">€900 – €1200</td>
+                        <td className="p-2 sm:p-3 border">
+                          Shooting + footage review possible
+                        </td>
+                      </tr>
+
+                      {/* Cinewhoop */}
+                      <tr>
+                        <td className="p-2 sm:p-3 border">Cinewhoop</td>
+                        <td className="p-2 sm:p-3 border">
+                          Indoor FPV (real estate, showroom)
+                        </td>
+                        <td className="p-2 sm:p-3 border">1–2 hours</td>
+                        <td className="p-2 sm:p-3 border">€300 – €450</td>
+                        <td className="p-2 sm:p-3 border">
+                          Smooth and precise indoor shots
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="p-2 sm:p-3 border"></td>
+                        <td className="p-2 sm:p-3 border">Half-day package</td>
+                        <td className="p-2 sm:p-3 border">~4 hours</td>
+                        <td className="p-2 sm:p-3 border">€650</td>
+                        <td className="p-2 sm:p-3 border">
+                          Prep + flying + review
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="p-2 sm:p-3 border"></td>
+                        <td className="p-2 sm:p-3 border">Full-day package</td>
+                        <td className="p-2 sm:p-3 border">~8 hours</td>
+                        <td className="p-2 sm:p-3 border">€950 – €1300</td>
+                        <td className="p-2 sm:p-3 border">
+                          Includes multiple sequences
+                        </td>
+                      </tr>
+
+                      {/* Long Range */}
+                      <tr>
+                        <td className="p-2 sm:p-3 border">Long Range (6")</td>
+                        <td className="p-2 sm:p-3 border">
+                          Nature / vehicle tracking
+                        </td>
+                        <td className="p-2 sm:p-3 border">2–3 hours</td>
+                        <td className="p-2 sm:p-3 border">€400 – €600</td>
+                        <td className="p-2 sm:p-3 border">
+                          Includes local travel
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="p-2 sm:p-3 border"></td>
+                        <td className="p-2 sm:p-3 border">Half-day package</td>
+                        <td className="p-2 sm:p-3 border">~4 hours</td>
+                        <td className="p-2 sm:p-3 border">€700</td>
+                        <td className="p-2 sm:p-3 border">
+                          Ideal for remote locations
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="p-2 sm:p-3 border"></td>
+                        <td className="p-2 sm:p-3 border">Full-day package</td>
+                        <td className="p-2 sm:p-3 border">~8 hours</td>
+                        <td className="p-2 sm:p-3 border">€1000 – €1400</td>
+                        <td className="p-2 sm:p-3 border">
+                          May include location scouting
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                {/* Add-ons */}
+                <div className="mt-6 text-sm text-white px-2 sm:px-0">
+                  <h2 className="text-base sm:text-lg font-semibold mb-2">
+                    Add-ons
+                  </h2>
+                  <ul className="list-disc pl-4 sm:pl-6 space-y-1">
+                    <li>Basic video editing: +€150 – €300</li>
+                    <li>Color grading: +€100</li>
+                    <li>Express delivery (&lt;24h): +20%</li>
+                    <li>Out-of-zone travel: billed per km or fixed fee</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )}

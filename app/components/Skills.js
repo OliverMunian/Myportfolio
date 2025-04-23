@@ -64,12 +64,12 @@ export default function Skills() {
     <div className="bg-white w-full p-10 flex flex-col max-sm:p-6">
       <div className="w-full flex flex-col items-end">
         <div className="w-full flex items-start justify-end">
-          <PiQuotesFill color="black" className="text-xl scale-x-[-1] mr-2" />
+          <PiQuotesFill color="black" className="text-xl scale-x-[-1]" />
           <h1 className="text-black text-5xl text-right font-inter font-medium">
             You're good at it ? <br />
             <span className="text-purple-500">My skills </span>
           </h1>
-          <PiQuotesFill color="black" className="text-xl ml-2" />
+          <PiQuotesFill color="black" className="text-xl" />
         </div>
         <h3 className="text-black text-right font-medium text-xl mt-3 max-xl:text-base">
           I use different type of languages and frameworks to bring a fresh
