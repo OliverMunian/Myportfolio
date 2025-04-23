@@ -189,7 +189,7 @@ export default function Portfolio() {
           <div className="flex items-center justify-center relative w-full rounded-xl overflow-hidden drop-shadow-xl shadow-xl">
             <Image src={project.src} alt={project.alt} />
             <div
-              className={`flex items-center justify-center size-full backdrop-blur-lg absolute p-10 transition-opacity duration-300 ${
+              className={`flex items-center justify-center size-full backdrop-blur-lg absolute transition-opacity duration-300 ${
                 hover === i ? "opacity-0 cursor-pointer" : "opacity-100"
               }`}
               onMouseOver={() => setHover(i)}
