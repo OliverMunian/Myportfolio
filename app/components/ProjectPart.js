@@ -147,10 +147,16 @@ export default function ProjectsPart() {
         }`}
       >
         <div className="flex flex-col items-center justify-center">
-          <h1 className="font-inter text-3xl font-bold max-sm:text-xl mb-3">{service.title}</h1>
+          <h1 className="font-inter text-3xl font-bold max-sm:text-xl mb-3">
+            {service.title}
+          </h1>
           {service.description}
         </div>
-        <Image src={service.src} alt={service.alt} className="w-1/3 max-sm:w-1/2" />
+        <Image
+          src={service.src}
+          alt={service.alt}
+          className="w-1/3 max-sm:w-1/2"
+        />
       </div>
     );
   });
@@ -205,7 +211,7 @@ export default function ProjectsPart() {
         <div className="flex items-center justify-center relative w-full rounded-xl overflow-hidden drop-shadow-xl shadow-xl">
           <Image src={project.src} alt={project.alt} className="h-[100%]" />
           <div
-            className={`flex items-center justify-center w-full h-full backdrop-blur-lg absolute p-10 transition-opacity duration-300 ${
+            className={`absolute inset-0 backdrop-blur-lg flex items-center justify-center transition-opacity duration-300 z-10 ${
               hover === i ? "opacity-0 cursor-pointer" : "opacity-100"
             }`}
             onMouseOver={() => setHover(i)}
@@ -259,7 +265,7 @@ export default function ProjectsPart() {
 
   return (
     <div className="flex flex-col w-full">
-      <div className="flex flex-col w-full p-10 bg-[#171717] rounded-b-3xl">
+      <div className="flex flex-col w-full p-10 bg-[#171717] rounded-b-3xl max-sm:p-6">
         <div>
           {" "}
           <h1 className="text-5xl font-inter font-medium">
@@ -282,7 +288,7 @@ export default function ProjectsPart() {
           </Swiper>
         </div>
       </div>
-      <div className="flex flex-col w-full p-10 bg-white rounded-t-xl">
+      <div className="flex flex-col w-full p-10 bg-white rounded-t-xl max-sm:p-6">
         <div>
           {" "}
           <h1 className="text-5xl text-black font-inter font-medium">
@@ -361,44 +367,13 @@ export default function ProjectsPart() {
                   </h1>
                 </motion.div>
               </div>
-              {/* <h1 className="text-black text-xl font-bold">
-                Some few options for your footage
-              </h1> */}
-              {/* <div className="w-full flex">
-                <div className="w-1/3 flex flex-col items-center mt-3">
-                  <h1 className="font-inter text-black text-lg underline">
-                    Long range/Cinematic:
-                  </h1>
-                  <p className="text-black text-center font-inter">
-                    Provides the drone to go really far away and capture
-                    landscape and cinematic view
-                  </p>
-                </div>
-                <div className="w-1/3 flex flex-col items-center mt-3">
-                  <h1 className="font-inter text-black text-lg underline">
-                    Mid-range/Freestyle:
-                  </h1>
-                  <p className="text-black font-inter text-center ">
-                    Tracking of person or vehicle, sport/dynamic video
-                  </p>
-                </div>
-                <div className="w-1/3 flex flex-col items-center mt-3">
-                  <h1 className="font-inter text-black text-lg underline">
-                    Short-range/Cinematic:
-                  </h1>
-                  <p className="text-black font-inter text-center ">
-                    Tracking a person or vehicle, pass trough small gaps, and
-                    smooth cinematic
-                  </p>
-                </div>
-              </div> */}
             </div>
           </div>
         </div>
       </div>
 
       {infoDrone && (
-        <div className="fixed top-0 left-0 w-full h-full z-40 flex flex-col items-center justify-center backdrop-blur-xl overflow-hidden">
+        <div className="fixed top-0 left-0 w-full h-full z-40 flex flex-col items-center justify-center backdrop-blur-xl overflow-hidden transition-opacity duration-300">
           <div className="absolute bg-black opacity-45 w-full h-full z-10"></div>
           <div className="flex flex-col justify-center items-start h-full w-full z-30">
             <div className="flex justify-end w-full py-5 px-6">

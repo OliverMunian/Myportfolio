@@ -1,8 +1,6 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
-//Assets
-import Drone from "../../public/Drone(4).png";
+import { toast } from "react-toastify";
 
 export default function ContactForm() {
   const [form, setForm] = useState({
@@ -22,7 +20,7 @@ export default function ContactForm() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Validation
@@ -38,33 +36,79 @@ export default function ContactForm() {
 
     if (Object.keys(newErrors).length === 0) {
       setSubmitted(true);
-      console.log("Formulaire envoyé ✅", form);
+      try {
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_URL_APP}/contact`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json", // ← important
+            },
+            body: JSON.stringify(form),
+          }
+        );
+        const data = await response.json();
 
-      // Ici, tu peux faire un appel API ou envoyer un mail
-      // fetch('/api/contact', { method: 'POST', body: JSON.stringify(form) })
-
-      // Reset form
-      setForm({
-        name: "",
-        lastname: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
+        if (!response.ok) {
+          throw new Error(
+            data.message || "Erreur lors de l'envoi du formulaire"
+          );
+        }
+        toast.success("Your message has been sent successfully", {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          style: {
+            background: "#1E293B",
+            color: "white",
+            borderRadius: "10px",
+            padding: "10px",
+          },
+        });
+        setSubmitted(false);
+        setForm({
+          name: "",
+          lastname: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      } catch {
+        console.log("Erreur de soumission");
+        toast.error("An error has been occured, please try later", {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          style: {
+            background: "#1E293B",
+            color: "white",
+            borderRadius: "10px",
+            padding: "10px",
+            marginTop:'5px'
+          },
+        });
+        setSubmitted(false);
+      }
     }
   };
 
   return (
-    <div className="flex flex-col relative z-20 py-10 w-full">
+    <div className="flex flex-col relative z-20 mb-5 w-full border-4 border-yellow-500 max-sm:px-6">
       <div className="w-full flex justify-center">
         <h1 className="text-3xl font-bold">Contact me</h1>
       </div>
       <form
         onSubmit={handleSubmit}
-        className="relative w-full max-w-xl mx-auto p-6 backdrop-blur-sm border-purple-500 border-[1px] shadow-md rounded-xl space-y-4"
+        className="relative w-full max-w-2xl mx-auto p-4 sm:p-6 backdrop-blur-sm border-purple-500 border-[1px] shadow-md rounded-xl space-y-4"
       >
-        <div className="flex gap-4">
-          <div className="w-1/2">
+        <div className="flex flex-col sm:flex-row gap-4">
+          <div className="w-full sm:w-1/2">
             <label className="block text-sm font-medium mb-1">Name</label>
             <input
               name="name"
@@ -78,7 +122,8 @@ export default function ContactForm() {
               <p className="text-red-500 text-sm">{errors.name}</p>
             )}
           </div>
-          <div className="w-1/2">
+
+          <div className="w-full sm:w-1/2">
             <label className="block text-sm font-medium mb-1">Lastname</label>
             <input
               name="lastname"
@@ -96,11 +141,11 @@ export default function ContactForm() {
 
         <div>
           <label className="block text-sm font-medium mb-1">
-            Adresse e-mail
+            Email address
           </label>
           <input
             name="email"
-            type="Email"
+            type="email"
             placeholder="Email"
             value={form.email}
             onChange={handleChange}
@@ -130,8 +175,8 @@ export default function ContactForm() {
           <label className="block text-sm font-medium mb-1">Message</label>
           <textarea
             name="message"
-            value={form.message}
             placeholder="Type your message here"
+            value={form.message}
             onChange={handleChange}
             className="w-full border border-gray-300 rounded px-3 py-2 min-h-[120px] placeholder:text-zinc-400 outline-none text-black"
           />
@@ -139,27 +184,48 @@ export default function ContactForm() {
             <p className="text-red-500 text-sm">{errors.message}</p>
           )}
         </div>
-        <div className="w-full flex items-center justify-between">
+
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <button
             type="submit"
-            className="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-6 rounded-lg transition duration-200"
+            disabled={submitted}
+            className={`w-full sm:w-auto text-white font-semibold py-2 px-6 rounded-lg transition-all duration-300
+    ${
+      submitted
+        ? "bg-green-500 cursor-not-allowed"
+        : "bg-purple-500 hover:bg-purple-600"
+    }`}
           >
-            Envoyer
+            {submitted ? (
+              <div className="flex items-center gap-2">
+                <svg
+                  className="animate-spin h-5 w-5 text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  />
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 01-8 8z"
+                  />
+                </svg>
+                Sending...
+              </div>
+            ) : (
+              "Send"
+            )}
           </button>
-          {/* <div className="w-1/4">
-            <Image src={Drone} alt="Drone_FPV" />
-          </div> */}
         </div>
-
-        {submitted && (
-          <p className="text-green-600 font-medium mt-4">
-            Message envoyé avec succès ✅
-          </p>
-        )}
       </form>
-      <div className="absolute bottom-0 right-10">
-        <Image src={Drone} alt="Drone_FPV" className="w-1/2" />
-      </div>
     </div>
   );
 }

@@ -54,18 +54,6 @@ export default function Portfolio() {
       layout: Ecna_logo,
       alt_layout: "Ecna_logo",
     },
-    // {
-    //   title: "Albania Trip",
-    //   src: AlbaniaFlag,
-    //   alt: "Albania flag",
-    //   description: (
-    //     <h1 className="text-base font-inter font-normal text-center">
-    //       FPV project - Trip in Albania visiting city of Girokaster, Dhermi,
-    //       Ksamil & Tirana
-    //       <br />
-    //     </h1>
-    //   ),
-    // },
     {
       title: "Ldsitri",
       src: Ldistri,
@@ -179,27 +167,52 @@ export default function Portfolio() {
     );
   });
 
+  //   onClick={() => setFullScreen(true)}
+
   const displayProjectsSwiper = projects.map((project, i) => {
     if (project.title == "ECNA") {
       return (
         <SwiperSlide
           key={i}
-          className="flex flex-col justify-between border-white border-[0.75px] p-3 rounded-lg max-md:w-full max-md:my-5"
+          className="flex flex-col justify-between border-white border-[0.75px] p-3 rounded-lg max-md:w-full max-md:my-5 min-h-[350px] h-full"
         >
-          <div className="flex items-center justify-center relative w-full rounded-xl overflow-hidden drop-shadow-xl shadow-xl">
-            <Image src={project.src} alt={project.alt} />
+          <div className="flex-1 flex items-center justify-center relative w-full rounded-xl overflow-hidden drop-shadow-xl shadow-xl">
+            <Image
+              src={project.src}
+              alt={project.alt}
+              className="object-cover w-full h-full"
+            />
             <div
-              className={`flex items-center justify-center size-full backdrop-blur-lg absolute transition-opacity duration-300 ${
+              className={`absolute inset-0 backdrop-blur-lg flex items-center justify-center transition-opacity duration-300 z-10 ${
                 hover === i ? "opacity-0 cursor-pointer" : "opacity-100"
               }`}
               onMouseOver={() => setHover(i)}
               onMouseLeave={() => setHover(false)}
               onClick={() => setFullScreen(true)}
             >
-              <Image src={project.layout} alt={project.alt_layout}/>
+              {project.link ? (
+                <Link
+                  href={project.link}
+                  target="_blank"
+                  className="flex items-center justify-center"
+                >
+                  <Image
+                    src={project.layout}
+                    alt={project.alt_layout}
+                    className="max-sm:w-[50%]"
+                  />
+                </Link>
+              ) : (
+                <Image
+                  src={project.layout}
+                  alt={project.alt_layout}
+                  className="max-sm:w-[50%]"
+                />
+              )}
             </div>
           </div>
-          <div className="flex items-center justify-center mt-4">
+
+          <div className="flex items-center justify-center mt-4 min-h-[40px] text-center">
             {project.description}
           </div>
         </SwiperSlide>
@@ -208,23 +221,44 @@ export default function Portfolio() {
     return (
       <SwiperSlide
         key={i}
-        className="w-full border-white border-[0.75px] p-3 rounded-lg max-md:w-full max-md:my-5"
+        className="flex flex-col justify-between border-white border-[0.75px] p-3 rounded-lg max-md:w-full max-md:my-5 min-h-[350px] h-full"
       >
-        <div className="flex items-center justify-center relative w-full rounded-xl overflow-hidden drop-shadow-xl shadow-xl">
-          <Image src={project.src} alt={project.alt} className="h-[100%]"/>
+        <div className="flex-1 flex items-center justify-center relative w-full rounded-xl overflow-hidden drop-shadow-xl shadow-xl">
+          <Image
+            src={project.src}
+            alt={project.alt}
+            className="object-cover w-full h-full"
+          />
           <div
-            className={`flex items-center justify-center w-full h-full backdrop-blur-lg absolute p-10 transition-opacity duration-300 ${
+            className={`absolute inset-0 backdrop-blur-lg flex items-center justify-center transition-opacity duration-300 z-10 ${
               hover === i ? "opacity-0 cursor-pointer" : "opacity-100"
             }`}
             onMouseOver={() => setHover(i)}
             onMouseLeave={() => setHover(false)}
           >
-            <Link href={project.link} target="_blank" className="flex items-center justify-center">
-              <Image src={project.layout} alt={project.alt_layout} className="w-8/12"/>
-            </Link>
+            {project.link ? (
+              <Link
+                href={project.link}
+                target="_blank"
+                className="flex items-center justify-center"
+              >
+                <Image
+                  src={project.layout}
+                  alt={project.alt_layout}
+                  className="max-sm:w-[50%]"
+                />
+              </Link>
+            ) : (
+              <Image
+                src={project.layout}
+                alt={project.alt_layout}
+                className="max-sm:w-[50%]"
+              />
+            )}
           </div>
         </div>
-        <div className="flex items-center justify-center mt-4">
+
+        <div className="flex items-center justify-center mt-4 min-h-[40px] text-center">
           {project.description}
         </div>
       </SwiperSlide>
