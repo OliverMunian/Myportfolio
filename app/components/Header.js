@@ -2,12 +2,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function Header({ onHeaderChange }) {
+export default function Header({ onHeaderChange, selectedHeader }) {
   const [activeHeader, setActiveHeader] = useState("Home");
 
   const handleHeaderClick = (title) => {
-    setActiveHeader(title);
-    onHeaderChange(title); // Envoie la valeur au parent
+    onHeaderChange(title);
   };
 
   const buttons = [
@@ -17,7 +16,7 @@ export default function Header({ onHeaderChange }) {
   ];
 
   // Trouver l'index du bouton actif pour positionner le carré
-  const activeIndex = buttons.findIndex((btn) => btn.title === activeHeader);
+  const activeIndex = buttons.findIndex((btn) => btn.title === selectedHeader);
 
   return (
     <div className="w-full flex items-center justify-center px-[5%]">
@@ -40,7 +39,7 @@ export default function Header({ onHeaderChange }) {
           >
             <h1
               className={`text-3xl font-inter transition-all duration-300 max-md:text-lg ${
-                activeHeader === button.title
+                selectedHeader === button.title
                   ? "text-black font-semibold"
                   : "text-white font-normal"
               }`}

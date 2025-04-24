@@ -118,7 +118,7 @@ export default function Home() {
           style={{ backgroundImage: `url(${Mountain.src})`, backgroundRepeat:'no-repeat', backgroundPosition:'bottom'}}
         ></div>
 
-        <Header className="z-30" onHeaderChange={setSelectedHeader} />
+        <Header className="z-30" onHeaderChange={setSelectedHeader}   selectedHeader={selectedHeader} />
 
         {selectedHeader == "Home" && (
           <div className="w-full h-full relative flex flex-col items-center justify-between z-30">
@@ -208,7 +208,7 @@ export default function Home() {
         {selectedHeader == "Projects" && <Projects />}
         {selectedHeader == "Contact" && <Contact/>}
       </div>
-      {active === "About me" && selectedHeader == "Home" ? <AboutMe /> : <></>}
+      {active === "About me" && selectedHeader == "Home" ? <AboutMe onSelectMenu={setSelectedHeader} /> : <></>}
       {active === "Hire me" && selectedHeader == "Home" ? <HireMe /> : <></>}
       {selectedHeader == "Projects" ? <ProjectsPart /> : <></>}
     </div>

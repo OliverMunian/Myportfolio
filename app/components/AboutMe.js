@@ -18,7 +18,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 
-export default function AboutMe() {
+export default function AboutMe({ onSelectMenu }) {
   const [appointment, setAppointment] = useState(false);
 
   const services = [
@@ -261,6 +261,7 @@ export default function AboutMe() {
             className="flex items-center justify-between p-4 bg-white rounded-2xl hover:cursor-pointer overflow-clip max-lg:mt-4"
             onMouseOver={() => setAppointment(true)}
             onMouseLeave={() => setAppointment(false)}
+            onClick={() => onSelectMenu("Contact")}
           >
             <motion.div
               className="size-[10px] rounded-full bg-purple-500 mr-1"
