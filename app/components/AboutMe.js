@@ -167,57 +167,6 @@ export default function AboutMe({ onSelectMenu }) {
   });
 
   const displaySwiperServices = services.map((service, i) => {
-    // if (service.title == "Backend developement") {
-    //   return (
-    //     <SwiperSlide
-    //       pagination={{
-    //         el: ".swiper-pagination",
-    //         clickable: true,
-    //       }}
-    //       key={i}
-    //       className="flex flex-col items-center justify-center border-[0.75px] border-white rounded-xl overflow-hidden w-[70%] h-full"
-    //     >
-    //       <div className="border-b-[0.75px] w-[100%] p-3">
-    //         <h1 className="font-inter font-normal text-xl text-center max-lg:text-base">
-    //           {service.title}
-    //         </h1>
-    //       </div>
-    //       <div className="w-full flex flex-col items-center justify-center p-4">
-    //         <motion.div
-    //           className="mr-8 max-lg:mr-6"
-    //           animate={{ rotate: -360 }}
-    //           transition={{
-    //             repeat: Infinity,
-    //             repeatType: "loop",
-    //             duration: 20,
-    //             ease: "linear",
-    //           }}
-    //         >
-    //           {service.icons}
-    //         </motion.div>
-
-    //         <motion.div
-    //           className="ml-8 -mt-5 max-lg:ml-6"
-    //           initial={{ rotate: 35 }}
-    //           animate={{ rotate: 360 }}
-    //           transition={{
-    //             repeat: Infinity,
-    //             repeatType: "loop",
-    //             duration: 20,
-    //             ease: "linear",
-    //           }}
-    //         >
-    //           {service.icons}
-    //         </motion.div>
-    //         <div className="p-2 ">
-    //           <p className="font-inter font-light text-center max-lg:text-sm">
-    //             {service.description}
-    //           </p>
-    //         </div>
-    //       </div>
-    //     </SwiperSlide>
-    //   );
-    // }
     return (
       <SwiperSlide
         pagination={{
@@ -225,7 +174,7 @@ export default function AboutMe({ onSelectMenu }) {
           clickable: true,
         }}
         key={i}
-        className="flex flex-col items-start justify-start border-[0.75px] border-white rounded-xl w-[20%] overflow-hidden max-lg:w-[70%] h-full"
+        className="flex flex-col items-start justify-start border-[0.75px] border-white rounded-xl w-[20%] overflow-hidden max-lg:w-[70%] h-full min-h-[250px]"
       >
         <div className="border-b-[0.75px] w-[100%] p-3">
           <h1 className="font-inter font-normal text-xl text-center max-lg:text-base">
