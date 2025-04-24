@@ -286,48 +286,34 @@ export default function Portfolio() {
         </Swiper>
       </div>
       {fullScreen && (
-        <motion.div
-          className="fixed bg-gradient-to-b from-blue-950 to-cyan-700 z-30"
-          initial={{
-            top: "50%",
-            left: "50%",
-            translateX: "-50%",
-            translateY: "-50%",
-            width: 250,
-            height: 250,
-            borderRadius: "50%",
-          }}
-          animate={{
-            width: ["250px", "100%"],
-            height: ["250px", "100vh"],
-            borderRadius: ["50%", "0%"],
-            top: ["50%", "0%"],
-            left: ["50%", "0%"],
-            translateX: ["-50%", "0%"],
-            translateY: ["-50%", "0%"],
-          }}
-          transition={{
-            duration: 1, // Temps total de l'animation
-            ease: "easeInOut", // Transition plus naturelle
-          }}
-        >
+        <div className="flex items-center justify-start">
           <motion.div
-            className="flex flex-col border-red-500 border-2 size-full"
+            className="fixed bg-gradient-to-b from-blue-950 to-cyan-700 z-30"
             initial={{
-              opacity: 0,
-              display: "none",
-              padding: 10,
+              width: 250,
+              height: 250,
+              top: "50%",
+              left: "50%",
+              translateX: "-50%",
+              translateY: "-50%",
+              borderRadius: "50%",
             }}
             animate={{
-              display: "flex",
-              padding: 5,
-              opacity: 1,
+              width: "100vmax",
+              height: "100vmax",
+              borderRadius: "0%",
             }}
             transition={{
-              delay: 1.5,
               duration: 1,
               ease: "easeInOut",
             }}
+          >
+          </motion.div>
+          <motion.div
+            className="fixed top-0 left-0 w-full h-screen z-40 flex flex-col items-center justify-center px-10"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 1 }}
           >
             <div className="w-full flex justify-end">
               <IoMdCloseCircle
@@ -336,12 +322,12 @@ export default function Portfolio() {
                 className="text-5xl hover:cursor-pointer"
               />
             </div>
-            <div className="w-full flex items-start justify-between p-10">
+            <div className="w-full flex items-start justify-between">
               <div className="relative flex items-center justify-center w-[20%]">
                 <Image
                   src={Iphone}
                   alt="iphone_frame"
-                  className="top-0 z-10 border-2 border-green-400 absolute overflow-hidden "
+                  className="top-0 z-10 absolute overflow-hidden "
                 />
                 <div
                   className="h-full top-0 object-cover z-0 w-[90%] overflow-hidden rounded-[30px] ml-2"
@@ -392,7 +378,7 @@ export default function Portfolio() {
               </div>
             </div>
           </motion.div>
-        </motion.div>
+        </div>
       )}
     </div>
   );
