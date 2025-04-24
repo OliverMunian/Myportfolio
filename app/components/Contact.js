@@ -66,6 +66,7 @@ export default function ContactForm() {
             color: "white",
             borderRadius: "10px",
             padding: "10px",
+            textAlign: "center",
           },
         });
         setSubmitted(false);
@@ -91,6 +92,7 @@ export default function ContactForm() {
             borderRadius: "10px",
             padding: "10px",
             marginTop: "5px",
+            textAlign: "center",
           },
         });
         setSubmitted(false);
