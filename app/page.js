@@ -16,7 +16,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Typewriter from "typewriter-effect";
-import DecryptedText from "./components/DecryptedText";
+import DecodeEffect from "./components/DecodeEffect";
 //Icons
 import { PiQuotesFill } from "react-icons/pi";
 import { TfiArrowTopRight } from "react-icons/tfi";
@@ -134,7 +134,8 @@ export default function Home() {
               <h1 className="text-white text-8xl text-center font-inter font-medium max-lg:text-7xl max-sm:text-[54px] ">
                 I'm <span className="text-purple-500">Olivier Malahel</span>,
                 <br />
-                <Typewriter
+                <DecodeEffect duration={1} interval={5}  text='Fullstack developper'/>
+                {/* <Typewriter
                   options={{
                     strings: ["Fullstack developer", "FPV Pilot"],
                     autoStart: true,
@@ -144,7 +145,7 @@ export default function Home() {
                     color: "#ffffff",
                     deleteSpeed: "20",
                   }}
-                />
+                /> */}
                 {/* <DecryptedText
                   texts={["Fullstack Developer", "FPV Pilot"]} // Texte à alterner
                   speed={100} // Vitesse de l'animation
