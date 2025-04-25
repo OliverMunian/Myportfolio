@@ -90,6 +90,10 @@ export default function Portfolio() {
               onMouseOver={() => setHover(i)}
               onMouseLeave={() => setHover(false)}
               onClick={() => setFullScreen(true)}
+              style={{
+                background:
+                  "radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 100%)",
+              }}
             >
               <a
                 href={project.link}
@@ -109,29 +113,6 @@ export default function Portfolio() {
           </div>
         </div>
       );
-      //   return (
-      //     <div
-      //       key={i}
-      //       className="flex flex-col justify-between w-[30%] border-white border-[0.75px] p-3 rounded-lg max-md:w-full max-md:my-5"
-      //     >
-      //       <div className="flex items-center justify-center relative w-full rounded-xl overflow-hidden drop-shadow-xl shadow-xl">
-      //         <Image src={project.src} alt={project.alt}  className="h-[100%]"/>
-      //         <div
-      //           className={`flex items-center justify-center size-full backdrop-blur-lg absolute p-10 transition-opacity duration-300 ${
-      //             hover === i ? "opacity-0 cursor-pointer" : "opacity-100"
-      //           }`}
-      //           onMouseOver={() => setHover(i)}
-      //           onMouseLeave={() => setHover(false)}
-      //           onClick={() => setFullScreen(true)}
-      //         >
-      //           <Image src={project.layout} alt={project.alt_layout} />
-      //         </div>
-      //       </div>
-      //       <div className="flex items-center justify-center mt-4">
-      //         {project.description}
-      //       </div>
-      //     </div>
-      //   );
     }
     return (
       <div
@@ -146,6 +127,10 @@ export default function Portfolio() {
             }`}
             onMouseOver={() => setHover(i)}
             onMouseLeave={() => setHover(false)}
+            style={{
+              background:
+                "radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 100%)",
+            }}
           >
             <a
               href={project.link}
@@ -183,12 +168,16 @@ export default function Portfolio() {
               className="object-cover w-full h-full"
             />
             <div
-              className={`absolute w-full h-full inset-0 backdrop-blur-lg bg-white/30 will-change-transform flex items-center justify-center transition-opacity duration-300 z-10 ${
+              className={`absolute w-full h-full inset-0 backdrop-blur-lg flex items-center justify-center transition-opacity duration-300 z-10 ${
                 hover === i ? "opacity-0 cursor-pointer" : "opacity-100"
               }`}
               onMouseOver={() => setHover(i)}
               onMouseLeave={() => setHover(false)}
               onClick={() => setFullScreen(true)}
+              style={{
+                background:
+                  "radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 100%)",
+              }}
             >
               {project.link ? (
                 <Link
@@ -230,11 +219,15 @@ export default function Portfolio() {
             className="object-cover w-full h-full"
           />
           <div
-            className={`absolute inset-0 backdrop-blur-lg bg-white/30 will-change-transform flex items-center justify-center transition-opacity duration-300 z-10${
+            className={`absolute inset-0 backdrop-blur-lg flex items-center justify-center transition-opacity duration-300 z-10 ${
               hover === i ? "opacity-0 cursor-pointer" : "opacity-100"
             }`}
             onMouseOver={() => setHover(i)}
             onMouseLeave={() => setHover(false)}
+            style={{
+              background:
+                "radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 100%)",
+            }}
           >
             {project.link ? (
               <Link

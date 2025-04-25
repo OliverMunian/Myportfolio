@@ -189,6 +189,10 @@ export default function ProjectsPart() {
             }`}
             onMouseOver={() => setHover(i)}
             onMouseLeave={() => setHover(false)}
+            style={{
+              background:
+                "radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 100%)",
+            }}
           >
             <Link href={project.link} target="_blank">
               <Image src={project.layout} alt={project.alt_layout} />
@@ -206,16 +210,20 @@ export default function ProjectsPart() {
     return (
       <SwiperSlide
         key={i}
-        className="w-full border-white border-[0.75px] p-3 rounded-lg max-md:w-full max-md:my-5"
+        className="w-full border-white border-[0.75px] p-3 rounded-lg max-md:w-full max-md:my-5 min-h-[270px]"
       >
         <div className="flex items-center justify-center relative w-full rounded-xl overflow-hidden drop-shadow-xl shadow-xl">
           <Image src={project.src} alt={project.alt} className="h-[100%]" />
           <div
-            className={`absolute inset-0 backdrop-blur-lg bg-white/30 flex items-center justify-center transition-opacity duration-300 z-10 ${
+            className={`absolute inset-0 backdrop-blur-lg flex items-center justify-center transition-opacity duration-300 z-10 ${
               hover === i ? "opacity-0 cursor-pointer" : "opacity-100"
             }`}
             onMouseOver={() => setHover(i)}
             onMouseLeave={() => setHover(false)}
+            style={{
+              background:
+                "radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 100%)",
+            }}
           >
             <Link
               href={project.link}

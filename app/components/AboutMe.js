@@ -256,14 +256,14 @@ export default function AboutMe({ onSelectMenu }) {
             <span className="text-purple-500 ">My location</span>
           </h1>
           <div className="flex items-center justify-center w-full py-3">
-            <div className="border-b-[1px] border-purple-500 w-[40%] max-xl:w-[35%]"></div>
+            <div className="border-b-[1px] border-purple-500 w-[40%] max-xl:w-[30%]"></div>
             <div className="flex items-center justify-center mx-2">
-              <h1 className="text-4xl text-black text-center font-inter font-medium mr-3 max-2xl:text-2xl max-xl:text-xl max-md:text-[13px] max-sm:text-[11px] max-[430px]:text-[8px]">
+              <h1 className="text-4xl text-black text-center font-inter font-medium mr-3 max-2xl:text-2xl max-md:text-[15px] max-sm:text-[15px] max-[430px]:text-[8px]">
                 CDG - ARN
               </h1>
             </div>
 
-            <div className="border-b-[1px] border-purple-500 w-[40%] max-xl:w-[35%]"></div>
+            <div className="border-b-[1px] border-purple-500 w-[40%] max-xl:w-[30%]"></div>
             <RiPlaneLine className="text-purple-500 rotate-90 text-6xl max-xl:text-3xl" />
           </div>
         </div>
