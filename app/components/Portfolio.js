@@ -307,15 +307,14 @@ export default function Portfolio() {
               duration: 1,
               ease: "easeInOut",
             }}
-          >
-          </motion.div>
+          ></motion.div>
           <motion.div
-            className="fixed top-0 left-0 w-full h-screen z-40 flex flex-col items-center justify-center px-10"
+            className="fixed top-0 left-0 w-full h-screen z-40 flex flex-col items-center justify-around px-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 1 }}
           >
-            <div className="w-full flex justify-end">
+            <div className="w-full flex items-center justify-end">
               <IoMdCloseCircle
                 color="white"
                 onClick={() => setFullScreen(false)}
@@ -323,18 +322,20 @@ export default function Portfolio() {
               />
             </div>
             <div className="w-full flex items-start justify-between">
-              <div className="relative flex items-center justify-center w-[20%]">
+              <div className="relative w-[280px] h-auto flex items-center justify-center">
                 <Image
                   src={Iphone}
                   alt="iphone_frame"
-                  className="top-0 z-10 absolute overflow-hidden "
+                  className="top-0 z-10 absolute overflow-hidden"
                 />
                 <div
-                  className="h-full top-0 object-cover z-0 w-[90%] overflow-hidden rounded-[30px] ml-2"
+                  className="h-full top-0 object-cover z-0 w-[85%] overflow-hidden rounded-[30px] ml-2"
                   style={{
+                    top: "2.5%", // aligne verticalement
+                    left: "5.5%",
                     // perspectiveOrigin: '300% 200%',
-                    // perspective:'90%',
-                    transform: "rotateY(41deg) rotateX(21deg) rotateZ(14deg)",
+                    perspective:'90%',
+                    transform: "rotateY(38deg) rotateX(21deg) rotateZ(14deg)",
                   }}
                 >
                   <MuxPlayer

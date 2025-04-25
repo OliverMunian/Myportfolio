@@ -174,7 +174,7 @@ export default function AboutMe({ onSelectMenu }) {
           clickable: true,
         }}
         key={i}
-        className="flex flex-col items-start justify-start border-[0.75px] border-white rounded-xl w-[20%] overflow-hidden max-lg:w-[70%] h-full min-h-[250px]"
+        className="flex flex-col items-start justify-start border-[0.75px] border-white rounded-xl w-[20%] overflow-hidden max-lg:w-[70%] h-full min-h-[270px]"
       >
         <div className="border-b-[0.75px] w-[100%] p-3">
           <h1 className="font-inter font-normal text-xl text-center max-lg:text-base">
