@@ -15,7 +15,7 @@ import MKBeautyWall from "../../public/Mk_beauty/MK_beauty_wallpaper.png";
 import { IoMdCloseCircle } from "react-icons/io";
 //Extensions
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import MuxPlayer from "@mux/mux-player-react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -60,8 +60,9 @@ export default function Portfolio() {
       alt: "Ldistri website",
       description: (
         <h1 className="text-base font-inter font-normal text-center">
-          Looking for a specific truck for your business? <br />
-          <span className="italic">
+          L.Distri contacted me to build a website for selling trucks
+          <br />
+          <span className="italic text-[11px]">
             "At L.Distri, we don’t just sell trucks, we equip those who move
             forward."
           </span>
@@ -73,6 +74,21 @@ export default function Portfolio() {
       alt_layout: "Ldistri logo",
     },
   ];
+
+  useEffect(() => {
+    if (fullScreen) {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
+    };
+  }, [fullScreen]);
 
   const displayProjects = projects.map((project, i) => {
     if (project.title == "ECNA") {
@@ -302,7 +318,7 @@ export default function Portfolio() {
             }}
           ></motion.div>
           <motion.div
-            className="fixed top-0 left-0 w-full h-screen z-40 flex flex-col items-center justify-around px-10"
+            className="fixed top-0 left-0 w-full h-screen z-40 flex flex-col items-center justify-around px-10 max-lg:px-6 max-lg:py-5 overflow-y-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 1 }}
@@ -314,8 +330,8 @@ export default function Portfolio() {
                 className="text-5xl hover:cursor-pointer"
               />
             </div>
-            <div className="w-full flex items-start justify-between">
-              <div className="relative w-[280px] h-auto flex items-center justify-center">
+            <div className="w-full flex items-start justify-between max-lg:flex-col max-xl:items-center">
+              <div className="relative w-[280px] h-auto flex items-center justify-center max-md:w-[200px]">
                 <Image
                   src={Iphone}
                   alt="iphone_frame"
@@ -324,11 +340,11 @@ export default function Portfolio() {
                 <div
                   className="h-full top-0 object-cover z-0 w-[85%] overflow-hidden rounded-[30px] ml-2"
                   style={{
-                    top: "2.5%", // aligne verticalement
-                    left: "5.5%",
-                    // perspectiveOrigin: '300% 200%',
-                    perspective:'90%',
-                    transform: "rotateY(38deg) rotateX(21deg) rotateZ(14deg)",
+                    // top: "2.5%", // aligne verticalement
+                    // left: "5.5%",
+                    perspectiveOrigin: '100% 200%',
+                    perspective: "800px",
+                    // transform: "rotateY(38deg) rotateX(21deg) rotateZ(14deg)",
                   }}
                 >
                   <MuxPlayer
@@ -342,32 +358,33 @@ export default function Portfolio() {
                     loop
                     style={{
                       "--controls": "none",
+                      perspectiveOrigin: '100% 200%',
+                      perspective: "800px",
                     }}
                   />
                 </div>
               </div>
-              <div className="relative flex flex-col w-[70%] p-5">
+              <div className="relative flex flex-col w-[70%] p-8 max-lg:w-full max-md:mt-5 ">
                 <div className="absolute top-0 right-0 border-t-4 border-r-4 border-white size-[50px]"></div>
                 <div className="absolute bottom-0 left-0 border-b-4 border-l-4 border-white size-[50px]"></div>
-                <h1 className="font-inter text-6xl">
-                  <span className="font-bold text-8xl">ECNA </span> -{" "}
-                  <span className="italic">Time is now your</span>
+                <h1 className="font-inter text-6xl max-xl:text-2xl max-lg:text-center">
+                  <span className="font-bold text-8xl max-md:text-5xl">
+                    ECNA
+                  </span>
+                  -<span className="italic">Time is now your</span>
                 </h1>
-                <p className="font-inter font-light text-2xl mt-5">
-                  I worked in ambulance in France during many years, so I
-                  decided to convert myself as a web developer to create my own
-                  mobile application to help ambulances companies to have a
-                  better organization at work and mainly save time during the
-                  day to help more patients.
+                <p className="font-inter font-light text-2xl mt-5 max-lg:text-base">
+                  I worked for many years in the ambulance sector in France, and
+                  later transitioned into web development to create a mobile
+                  application designed specifically for ambulance companies.
                   <br />
                   <br />
-                  I brought them new features where they can create and have the
-                  access their own vehicle fleet and a part of the activity
-                  about the company but also the activity of their
-                  collaborators.
+                  I introduced features allowing companies to manage their
+                  vehicle fleet and monitor both company-wide activity and that
+                  of individual collaborators.
                   <br />
                   <br />
-                  The application is still in progress...
+                  The application is currently still under development.
                 </p>
               </div>
             </div>

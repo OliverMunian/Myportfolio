@@ -277,7 +277,7 @@ export default function ProjectsPart() {
         <div>
           {" "}
           <h1 className="text-5xl font-inter font-medium">
-            Still in progress... <br />
+          Still under development... <br />
             <span className="text-purple-500">My projects</span>{" "}
           </h1>
         </div>
