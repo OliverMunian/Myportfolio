@@ -340,11 +340,11 @@ export default function Portfolio() {
                 <div
                   className="h-full top-0 object-cover z-0 w-[85%] overflow-hidden rounded-[30px] ml-2"
                   style={{
-                    // top: "2.5%", // aligne verticalement
-                    // left: "5.5%",
+                    top: "2.5%", // aligne verticalement
+                    left: "5.5%",
                     perspectiveOrigin: '100% 200%',
                     perspective: "800px",
-                    // transform: "rotateY(38deg) rotateX(21deg) rotateZ(14deg)",
+                    transform: "rotateY(38deg) rotateX(21deg) rotateZ(14deg)",
                   }}
                 >
                   <MuxPlayer
@@ -358,8 +358,6 @@ export default function Portfolio() {
                     loop
                     style={{
                       "--controls": "none",
-                      perspectiveOrigin: '100% 200%',
-                      perspective: "800px",
                     }}
                   />
                 </div>
