@@ -187,7 +187,7 @@ export default function Portfolio() {
       return (
         <SwiperSlide
           key={i}
-          className="flex flex-col justify-between border-white border-[0.75px] p-3 rounded-lg max-md:w-full max-md:my-5 min-h-[500px] h-full"
+          className="flex flex-col justify-between border-white border-[0.75px] p-3 rounded-lg max-md:w-full max-md:my-5 min-h-[380px] h-full"
         >
           <div className="flex-1 flex items-center justify-center relative w-full rounded-xl overflow-hidden drop-shadow-xl shadow-xl">
             <Image
@@ -238,7 +238,7 @@ export default function Portfolio() {
     return (
       <SwiperSlide
         key={i}
-        className="flex flex-col justify-between border-white border-[0.75px] p-3 rounded-lg max-md:w-full max-md:my-5 min-h-[500px] h-full"
+        className="flex flex-col justify-between border-white border-[0.75px] p-3 rounded-lg max-md:w-full max-md:my-5 min-h-[380px] h-full"
       >
         <div className="flex-1 flex items-center justify-center relative w-full rounded-xl overflow-hidden drop-shadow-xl shadow-xl">
           <Image
