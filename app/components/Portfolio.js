@@ -24,6 +24,18 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 export default function Portfolio() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // max-md (768px)
+    };
+
+    handleResize(); // call once
+    window.addEventListener("resize", handleResize);
+    
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   const [hover, setHover] = useState(false);
   const [fullScreen, setFullScreen] = useState(false);
   const projects = [
@@ -175,7 +187,7 @@ export default function Portfolio() {
       return (
         <SwiperSlide
           key={i}
-          className="flex flex-col justify-between border-white border-[0.75px] p-3 rounded-lg max-md:w-full max-md:my-5 min-h-[350px] h-full"
+          className="flex flex-col justify-between border-white border-[0.75px] p-3 rounded-lg max-md:w-full max-md:my-5 min-h-[500px] h-full"
         >
           <div className="flex-1 flex items-center justify-center relative w-full rounded-xl overflow-hidden drop-shadow-xl shadow-xl">
             <Image
@@ -226,7 +238,7 @@ export default function Portfolio() {
     return (
       <SwiperSlide
         key={i}
-        className="flex flex-col justify-between border-white border-[0.75px] p-3 rounded-lg max-md:w-full max-md:my-5 min-h-[350px] h-full"
+        className="flex flex-col justify-between border-white border-[0.75px] p-3 rounded-lg max-md:w-full max-md:my-5 min-h-[500px] h-full"
       >
         <div className="flex-1 flex items-center justify-center relative w-full rounded-xl overflow-hidden drop-shadow-xl shadow-xl">
           <Image
@@ -335,31 +347,44 @@ export default function Portfolio() {
                 <Image
                   src={Iphone}
                   alt="iphone_frame"
-                  className="top-0 z-10 absolute overflow-hidden"
-                />
+                  className="top-0 z-10 overflow-hidden"
+                /> 
                 <div
-                  className="h-full top-0 object-cover z-0 w-[85%] overflow-hidden rounded-[30px] ml-2"
+                  className="absolute h-full flex items-center justify-center top-0 object-cover z-0 w-[90%] rounded-[30px] ml-2 max-md:w-[91%]"
                   style={{
-                    top: "2.5%", // aligne verticalement
-                    left: "5.5%",
-                    perspectiveOrigin: '100% 200%',
-                    perspective: "800px",
-                    transform: "rotateY(38deg) rotateX(21deg) rotateZ(14deg)",
+                    perspective: isMobile ?"750px" : "800px",
+                    perspectiveOrigin: isMobile ? "-115% 185%": "-150% 190%",
+                    marginTop : isMobile ? "5px":""
                   }}
                 >
-                  <MuxPlayer
-                    className="w-[100%]"
-                    streamType="on-demand"
-                    playbackId="HNaomUlHcXVTr6nQmds1NoxjnJWmByWt2GIji5k9KTw"
-                    metadataViewerUserId="Placeholder (optional)"
-                    primaryColor="transparent"
-                    secondaryColor="transparent"
-                    autoPlay="muted"
-                    loop
+                  {/* <Image
+                    src={Iphone}
+                    alt="iphone_frame"
+                    className="top-0 z-10 absolute overflow-hidden w-full"
+                  /> */}
+                  <div
+                    className="ml-1 flex items-center justify-center overflow-hidden rounded-[30px] -mt-5 max-md:rounded-[15px] rotate-y-[12deg] rotate-x-[2.5deg] max-md:rotate-y-[16deg]"
                     style={{
-                      "--controls": "none",
+                      transform: isMobile
+                        ? "rotateY(16deg) rotateX(2.5deg)"
+                        : "rotateY(12deg) rotateX(2.5deg)",
+                      width: isMobile ? "88%" :"90%",
                     }}
-                  />
+                  >
+                    <MuxPlayer
+                      className="w-[100%]"
+                      streamType="on-demand"
+                      playbackId="HNaomUlHcXVTr6nQmds1NoxjnJWmByWt2GIji5k9KTw"
+                      metadataViewerUserId="Placeholder (optional)"
+                      primaryColor="transparent"
+                      secondaryColor="transparent"
+                      autoPlay="muted"
+                      loop
+                      style={{
+                        "--controls": "none",
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
               <div className="relative flex flex-col w-[70%] p-8 max-lg:w-full max-md:mt-5 ">

@@ -167,7 +167,7 @@ export default function HireMe() {
               Download my CV
             </h1>
             <a href="Fullstack_EN.pdf" download="Fullstack_EN.pdf">
-              <IoMdCloudDownload color="#9d59ef" className="text-5xl" />
+              <IoMdCloudDownload className="text-5xl hover:text-black text-[#9d59ef] transition" />
             </a>
           </div>
         </div>
