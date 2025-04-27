@@ -330,7 +330,7 @@ export default function Portfolio() {
             }}
           ></motion.div>
           <motion.div
-            className="fixed top-0 left-0 w-full h-screen z-40 flex flex-col items-center justify-around px-10 max-lg:px-6 max-lg:py-5 overflow-y-auto"
+            className="fixed inset-0 z-40 flex flex-col items-center justify-start px-10 max-lg:px-6 max-lg:py-5 overflow-y-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 1 }}
