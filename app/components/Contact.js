@@ -101,7 +101,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="flex flex-col relative z-20 mb-5 w-full max-sm:px-6">
+    <div className="flex flex-col relative z-20 w-full min-h-0 overflow-hidden max-sm:px-6 max-[430px]:-mt-2">
       {/* <div className="w-full flex justify-center">
         <h1 className="text-3xl font-bold">Contact me</h1>
       </div> */}
