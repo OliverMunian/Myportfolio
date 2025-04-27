@@ -210,7 +210,7 @@ export default function ProjectsPart() {
     return (
       <SwiperSlide
         key={i}
-        className="w-full border-white border-[0.75px] p-3 rounded-lg max-md:w-full max-md:my-5 min-h-[270px]"
+        className="w-full border-white border-[0.75px] p-3 rounded-lg max-md:w-full max-md:my-5 min-h-[350px]"
       >
         <div className="flex items-center justify-center relative w-full rounded-xl overflow-hidden drop-shadow-xl shadow-xl">
           <Image src={project.src} alt={project.alt} className="h-[100%]" />
