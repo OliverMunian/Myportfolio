@@ -17,7 +17,6 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-
 export default function AboutMe({ onSelectMenu }) {
   const [appointment, setAppointment] = useState(false);
 
@@ -73,8 +72,8 @@ export default function AboutMe({ onSelectMenu }) {
       title: "Mobile application",
       description: (
         <>
-          Do you have an idea for a mobile application? <br />I can bring it to
-          life using React Native, enabling seamless deployment on both iOS and
+          Do you have an idea for a mobile app? <br />I can bring it to life
+          with React Native, delivering a seamless experience on both iOS and
           Android platforms.
         </>
       ),
@@ -299,8 +298,8 @@ export default function AboutMe({ onSelectMenu }) {
                 in JavaScript, React, and modern web technologies to new
                 opportunities. Looking forward to connecting with fellow
                 developers, learning from the tech community here, and exploring
-                everything Stockholm has to offer! Let's build something
-                great together!
+                everything Stockholm has to offer! Let's build something great
+                together!
               </p>
             </div>
           </div>

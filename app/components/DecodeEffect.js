@@ -47,8 +47,12 @@ export default function DecodeEffect({ duration, interval }) {
   }, [currentText, duration, interval]);
 
   return (
-    <div>
-      <h1 className="text-white text-8xl text-center font-inter font-medium max-lg:text-7xl max-sm:text-[54px] ">
+    <div className="w-full">
+      <h1
+        className={`text-white text-8xl text-center font-inter font-medium max-lg:text-7xl ${
+            scrambledText === "Fullstack developer" ? "max-sm:text-[45px] max-[430px]:text-[40px]" : "max-sm:text-[54px]"
+        }`}
+      >
         {scrambledText}
       </h1>
     </div>

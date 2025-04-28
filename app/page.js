@@ -134,7 +134,7 @@ export default function Home() {
               <h1 className="text-white text-8xl text-center font-inter font-medium max-lg:text-7xl max-sm:text-[54px] ">
                 I'm <span className="text-purple-500">Olivier Malahel</span>,
                 <br />
-                <DecodeEffect duration={1} interval={5}  text='Fullstack developper'/>
+                <DecodeEffect duration={1} interval={5}/>
                 {/* <Typewriter
                   options={{
                     strings: ["Fullstack developer", "FPV Pilot"],
