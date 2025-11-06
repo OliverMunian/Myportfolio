@@ -81,7 +81,7 @@ export default function ContactForm() {
         console.log("Erreur de soumission");
         toast.error("An error has been occured, please try later", {
           position: "top-center",
-          autoClose: 3000,
+          autoClose: 4000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -101,24 +101,21 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="flex flex-col relative z-20 w-full min-h-0 overflow-hidden max-sm:px-6 max-[430px]:-mt-2">
-      {/* <div className="w-full flex justify-center">
-        <h1 className="text-3xl font-bold">Contact me</h1>
-      </div> */}
+    <div className="flex flex-col items-center justify-center relative z-20 w-full h-full  overflow-hidden max-sm:px-6 max-[430px]:-mt-2">
       <form
         onSubmit={handleSubmit}
-        className="relative w-full max-w-2xl mx-auto p-4 sm:p-6 backdrop-blur-sm border-purple-500 border-[1px] shadow-md rounded-xl space-y-4"
+        className="relative w-full max-w-2xl mx-auto p-4 sm:p-6 backdrop-blur-sm bg-black/50 border-purple-500 border-[1px] shadow-md rounded-xl space-y-4"
       >
         <div className="flex flex-col sm:flex-row gap-4">
           <div className="w-full sm:w-1/2">
-            <label className="block text-sm font-medium mb-1">Name</label>
+            <label className="block text-sm mb-1 font-bold">Name</label>
             <input
               name="name"
               type="text"
               placeholder="Name"
               value={form.name}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded px-3 py-2 placeholder:text-zinc-400 outline-none text-black"
+              className="w-full border bg-white/20 border-gray-400 px-3 py-2 placeholder:text-white outline-none text-white rounded-lg"
             />
             {errors.name && (
               <p className="text-red-500 text-sm">{errors.name}</p>
@@ -126,14 +123,14 @@ export default function ContactForm() {
           </div>
 
           <div className="w-full sm:w-1/2">
-            <label className="block text-sm font-medium mb-1">Lastname</label>
+            <label className="block text-sm font-bold mb-1">Lastname</label>
             <input
               name="lastname"
               type="text"
               placeholder="Lastname"
               value={form.lastname}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded px-3 py-2 placeholder:text-zinc-400 outline-none text-black"
+              className="w-full border bg-white/20 border-gray-400 px-3 py-2 placeholder:text-white outline-none text-white rounded-lg"
             />
             {errors.lastname && (
               <p className="text-red-500 text-sm">{errors.lastname}</p>
@@ -142,16 +139,14 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-1">
-            Email address
-          </label>
+          <label className="block text-sm font-bold mb-1">Email address</label>
           <input
             name="email"
             type="email"
             placeholder="Email"
             value={form.email}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded px-3 py-2 placeholder:text-zinc-400 outline-none text-black"
+            className="w-full border bg-white/20 border-gray-400 px-3 py-2 placeholder:text-white outline-none text-white rounded-lg"
           />
           {errors.email && (
             <p className="text-red-500 text-sm">{errors.email}</p>
@@ -159,14 +154,14 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-1">Subject</label>
+          <label className="block text-sm font-bold mb-1">Subject</label>
           <input
             name="subject"
             type="text"
             placeholder="Subject"
             value={form.subject}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded px-3 py-2 placeholder:text-zinc-400 outline-none text-black"
+            className="w-full border bg-white/35 border-gray-400 px-3 py-2 placeholder:text-white outline-none text-white rounded-lg"
           />
           {errors.subject && (
             <p className="text-red-500 text-sm">{errors.subject}</p>
@@ -174,20 +169,20 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-1">Message</label>
+          <label className="block text-sm font-bold mb-1">Message</label>
           <textarea
             name="message"
             placeholder="Type your message here"
             value={form.message}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded px-3 py-2 min-h-[120px] placeholder:text-zinc-400 outline-none text-black"
+            className="w-full border bg-white/35 border-gray-400 rounded px-3 py-2 min-h-[120px] placeholder:text-white outline-none text-white"
           />
           {errors.message && (
             <p className="text-red-500 text-sm">{errors.message}</p>
           )}
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="w-full flex items-center justify-end gap-4 max-sm:flex-col">
           <button
             type="submit"
             disabled={submitted}
