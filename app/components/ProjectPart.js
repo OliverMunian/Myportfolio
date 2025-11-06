@@ -1,5 +1,5 @@
-import MkBeautyLogo from "../../public/Mk_beauty/Logo.png";
-import MKBeautyWall from "../../public/Mk_beauty/MK_beauty_wallpaper.png";
+import SFRPLogo from "../../public/SFPR_logo.png";
+import SFPR from '../../public/SFPR.jpg'
 import OliviaBM from "../../public/oliviabmn/Website.png";
 import OliviaBMLogo from "../../public/oliviabmn/Logo.png";
 import NAL from "../../public/NAL/NAL.png";
@@ -29,17 +29,17 @@ export default function ProjectsPart() {
   const myProject = [
     {
       title: "MK Beauty",
-      src: MKBeautyWall,
+      src: SFPR,
       alt: "MKBeauty_wallpaper",
-      link: "https://mk-beauty.vercel.app/",
+      link: "https://auto-ecole-sfpr.vercel.app",
       description: (
         <h1 className="text-base font-inter font-normal text-center">
-          Need a fresh manucure with some nail art ?
+          Let's drive !
           <br />
-          Here you could take an Price for your nails <br />
+          Here you could get some infos <br />
         </h1>
       ),
-      layout: MkBeautyLogo,
+      layout: SFRPLogo,
       alt_layout: "MkBeauty_logo",
     },
     {

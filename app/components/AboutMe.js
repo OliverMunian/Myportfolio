@@ -194,7 +194,7 @@ export default function AboutMe({ onSelectMenu }) {
 
   return (
     <div className="w-full">
-      <div className="bg-[#171717] w-full p-10 rounded-b-3xl max-md:rounded-none max-sm:p-6">
+      <div className="bg-[#171717] w-full p-10  max-md:rounded-none max-sm:p-6">
         <div className="w-full flex items-center justify-between max-lg:flex-col max-lg:items-start">
           <div>
             <h1 className="text-white text-5xl font-inter font-medium max-sm:text-4xl">
@@ -248,7 +248,7 @@ export default function AboutMe({ onSelectMenu }) {
         </div>
       </div>
 
-      <div className="flex flex-col bg-white w-full">
+      {/* <div className="flex flex-col bg-white w-full">
         <div className="w-full flex flex-col items-end justify-end py-8 px-10 max-sm:px-6 ">
           <h1 className="text-black text-5xl font-inter font-medium text-left max-sm:text-4xl">
             Here I am !<br />
@@ -270,17 +270,6 @@ export default function AboutMe({ onSelectMenu }) {
         <div className="w-full relative flex items-center justify-center bg-panorama bg-cover bg-center h-[600px]">
           <div className="absolute w-full h-full top-0 left-0 bg-map bg-cover bg-center gradientImage flex items-end justify-end"></div>
           <div className="size-full flex flex-col items-end backdrop-blur-[5px] px-5 py-10 max-md:items-start">
-            {/* <div className="flex items-center justify-center w-full">
-              <div className="border-b-[1px] border-white w-[40%] max-xl:w-[35%]"></div>
-              <div className="flex items-center mx-2">
-                <h1 className="text-4xl text-white font-inter font-bold mr-3 max-2xl:text-2xl max-xl:text-xl max-sm:text-base">
-                  ORY - ARN
-                </h1>
-              </div>
-
-              <div className="border-b-[1px] border-white w-[40%] max-xl:w-[35%]"></div>
-              <RiPlaneLine className="text-white rotate-90 text-6xl max-xl:text-3xl" />
-            </div> */}
 
             <h1 className="text-white text-6xl font-inter font-medium uppercase max-sm:text-4xl">
               Stockholm
@@ -304,7 +293,7 @@ export default function AboutMe({ onSelectMenu }) {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

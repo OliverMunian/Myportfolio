@@ -8,19 +8,19 @@ import Languages from "./Languages";
 
 export default function HireMe() {
   const timeLineEducation = [
-    {
-      title: "Swedish Learning",
-      place: "SFI School",
-      town: "Stockholm",
-      date: "2025",
-      description: (
-        <>
-          Learning how to introduce myself in Swedish <br />
-          Learning the fundamental of the language <br />
-          Knowledge of the origin
-        </>
-      ),
-    },
+    // {
+    //   title: "Swedish Learning",
+    //   place: "SFI School",
+    //   town: "Stockholm",
+    //   date: "2025",
+    //   description: (
+    //     <>
+    //       Learning how to introduce myself in Swedish <br />
+    //       Learning the fundamental of the language <br />
+    //       Knowledge of the origin
+    //     </>
+    //   ),
+    // },
     {
       title: "Developer Fullstack",
       place: "La Capsule",
