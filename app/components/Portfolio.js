@@ -5,12 +5,8 @@ import Sodermalm_logo from "../../public/Logo_rectangle.png";
 import Sodermalm_barbershop from "../../public/Sodermalm_barbershop.png";
 import Ecna from "../../public/Ecna.jpg";
 import Ecna_logo from "../../public/Ecna_logo.png";
-import Iphone from "../../public/Iphone_perspective.png";
-import AlbaniaFlag from "../../public/Albania_flag.png";
 import Ldistri from "../../public/Ldistri.png";
 import Ldistri_logo from "../../public/Ldistri_logo.png";
-import MkBeautyLogo from "../../public/Mk_beauty/Logo.png";
-import MKBeautyWall from "../../public/Mk_beauty/MK_beauty_wallpaper.png";
 //Icons
 import { IoMdCloseCircle } from "react-icons/io";
 //Extensions
@@ -33,7 +29,7 @@ export default function Portfolio() {
 
     handleResize(); // call once
     window.addEventListener("resize", handleResize);
-    
+
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   const [hover, setHover] = useState(false);
@@ -309,7 +305,8 @@ export default function Portfolio() {
       {fullScreen && (
         <div className="flex items-center justify-start">
           <motion.div
-            className="fixed bg-gradient-to-b from-blue-950 to-cyan-700 z-30"
+            className="fixed bg-gradient-to-b from-[#1B2C61] from-0% via-[#1B2C61] via-65% to-cyan-700 to-85% z-30
+            max-lg:bg-gradient-to-b max-lg:from-[#1B2C61] max-lg:from-0% max-lg:via-[#1B2C61] max-lg:via-70% max-lg:to-cyan-700 max-lg:to-95%"
             initial={{
               width: 250,
               height: 250,
@@ -329,72 +326,60 @@ export default function Portfolio() {
               ease: "easeInOut",
             }}
           ></motion.div>
+
           <motion.div
-            className="fixed inset-0 z-40 flex flex-col items-center justify-start px-10 max-lg:px-6 max-lg:py-5 overflow-y-auto"
+            className="fixed h-[100svh] flex flex-col inset-0 z-40 overflow-hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 1 }}
           >
-            <div className="w-full flex items-center justify-end">
+            <div className="w-full flex items-center justify-end py-5 pr-5 max-md:py-3">
               <IoMdCloseCircle
                 color="white"
                 onClick={() => setFullScreen(false)}
-                className="text-5xl hover:cursor-pointer"
+                className="text-3xl hover:cursor-pointer"
               />
             </div>
-            <div className="w-full flex items-start justify-between max-lg:flex-col max-xl:items-center">
-              <div className="relative w-[280px] h-auto flex items-center justify-center max-md:w-[200px]">
-                <Image
-                  src={Iphone}
-                  alt="iphone_frame"
-                  className="top-0 z-10 overflow-hidden"
-                /> 
-                <div
-                  className="absolute h-full flex items-center justify-center top-0 object-cover z-0 w-[90%] rounded-[30px] ml-2 max-md:w-[91%]"
+
+            <div className="w-full flex h-full items-start justify-between  pb-5 max-lg:flex-col">
+              {/* <div className="w-1/2 flex items-center justify-center border-green-500 border-2 max-lg:w-full xl:hidden">
+                <MuxPlayer
+                  className="w-[100%]"
+                  streamType="on-demand"
+                  playbackId="FUOkW14z3CTNX9lA5Latj00xmOeI01mwp9E440100R64xZE"
+                  metadataViewerUserId="Placeholder (optional)"
+                  primaryColor="transparent"
+                  secondaryColor="transparent"
+                  autoPlay="muted"
+                  loop
                   style={{
-                    perspective: isMobile ?"750px" : "800px",
-                    perspectiveOrigin: isMobile ? "-115% 185%": "-150% 190%",
-                    marginTop : isMobile ? "5px":""
+                    "--controls": "none",
                   }}
-                >
-                  {/* <Image
-                    src={Iphone}
-                    alt="iphone_frame"
-                    className="top-0 z-10 absolute overflow-hidden w-full"
-                  /> */}
-                  <div
-                    className="ml-1 flex items-center justify-center overflow-hidden rounded-[30px] -mt-5 max-md:rounded-[15px] rotate-y-[12deg] rotate-x-[2.5deg] max-md:rotate-y-[16deg]"
-                    style={{
-                      transform: isMobile
-                        ? "rotateY(16deg) rotateX(2.5deg)"
-                        : "rotateY(12deg) rotateX(2.5deg)",
-                      width: isMobile ? "88%" :"90%",
-                    }}
-                  >
-                    <MuxPlayer
-                      className="w-[100%]"
-                      streamType="on-demand"
-                      playbackId="HNaomUlHcXVTr6nQmds1NoxjnJWmByWt2GIji5k9KTw"
-                      metadataViewerUserId="Placeholder (optional)"
-                      primaryColor="transparent"
-                      secondaryColor="transparent"
-                      autoPlay="muted"
-                      loop
-                      style={{
-                        "--controls": "none",
-                      }}
-                    />
-                  </div>
-                </div>
+                />
+              </div> */}
+              <div className="flex items-center justify-center  xl:w-3/6">
+                <MuxPlayer
+                  className="w-[100%]"
+                  streamType="on-demand"
+                  playbackId="UfebJcy6BguZxfRJOzXpLN9oPpZX01VQbWOPg9pp6138"
+                  metadataViewerUserId="Placeholder (optional)"
+                  primaryColor="transparent"
+                  secondaryColor="transparent"
+                  autoPlay="muted"
+                  loop
+                  style={{
+                    "--controls": "none",
+                  }}
+                />
               </div>
-              <div className="relative flex flex-col w-[70%] p-8 max-lg:w-full max-md:mt-5 ">
-                <div className="absolute top-0 right-0 border-t-4 border-r-4 border-white size-[50px]"></div>
-                <div className="absolute bottom-0 left-0 border-b-4 border-l-4 border-white size-[50px]"></div>
+              <div className="w-3/5 relative flex flex-col p-8 max-lg:w-full">
+                <div className="absolute top-0 right-3 border-t-4 border-r-4 border-white size-[50px]"></div>
+                <div className="absolute bottom-0 left-3 border-b-4 border-l-4 border-white size-[50px]"></div>
                 <h1 className="font-inter text-6xl max-xl:text-2xl max-lg:text-center">
-                  <span className="font-bold text-8xl max-md:text-5xl">
+                  <span className="font-bold text-8xl max-md:text-3xl max-lg:text-5xl">
                     ECNA
                   </span>
-                  -<span className="italic">Time is now your</span>
+                  -<span className="italic">Time is now yours</span>
                 </h1>
                 <p className="font-inter font-light text-2xl mt-5 max-lg:text-base">
                   I worked for many years in the ambulance sector in France, and
@@ -405,6 +390,13 @@ export default function Portfolio() {
                   I introduced features allowing companies to manage their
                   vehicle fleet and monitor both company-wide activity and that
                   of individual collaborators.
+                  <br />
+                  <br />
+                  <a href="https://ecnatimeisnowyours.com" target="_blank">
+                    <span className="underline underline-offset-3 font-bold">
+                      Here is my landing page
+                    </span>
+                  </a>
                   <br />
                   <br />
                   The application is currently still under development.
