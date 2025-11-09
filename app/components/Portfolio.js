@@ -21,17 +21,6 @@ import "swiper/css/pagination";
 
 export default function Portfolio() {
   const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // max-md (768px)
-    };
-
-    handleResize(); // call once
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
   const [hover, setHover] = useState(false);
   const [fullScreen, setFullScreen] = useState(false);
   const projects = [
@@ -84,17 +73,50 @@ export default function Portfolio() {
   ];
 
   useEffect(() => {
-    if (fullScreen) {
-      document.body.style.overflow = "hidden";
-      document.documentElement.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-      document.documentElement.style.overflow = "auto";
-    }
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // max-md (768px)
+    };
+
+    handleResize(); // call once
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (!fullScreen) return;
+
+    const scrollY = window.scrollY;
+
+    const html = document.documentElement;
+    const prev = {
+      htmlOverflow: html.style.overflow,
+      htmlOverscroll: html.style.overscrollBehavior,
+      bodyPosition: document.body.style.position,
+      bodyTop: document.body.style.top,
+      bodyWidth: document.body.style.width,
+      bodyOverflow: document.body.style.overflow,
+    };
+
+    // Bloque le scroll partout (html + body), iOS-friendly
+    html.style.overflow = "hidden";
+    html.style.overscrollBehavior = "none"; // évite le “bounce”
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = "100%";
+    document.body.style.overflow = "hidden";
 
     return () => {
-      document.body.style.overflow = "auto";
-      document.documentElement.style.overflow = "auto";
+      // Restaure
+      html.style.overflow = prev.htmlOverflow;
+      html.style.overscrollBehavior = prev.htmlOverscroll;
+      document.body.style.position = prev.bodyPosition;
+      document.body.style.top = prev.bodyTop;
+      document.body.style.width = prev.bodyWidth;
+      document.body.style.overflow = prev.bodyOverflow;
+
+      // Revenir exactement où on était
+      window.scrollTo(0, scrollY);
     };
   }, [fullScreen]);
 
@@ -305,8 +327,9 @@ export default function Portfolio() {
       {fullScreen && (
         <div className="flex items-center justify-start">
           <motion.div
-            className="fixed bg-gradient-to-b from-[#1B2C61] from-0% via-[#1B2C61] via-65% to-cyan-700 to-85% z-30
-            max-lg:bg-gradient-to-b max-lg:from-[#1B2C61] max-lg:from-0% max-lg:via-[#1B2C61] max-lg:via-70% max-lg:to-cyan-700 max-lg:to-95%"
+            className="fixed inset-0 z-30 pointer-events-none  bg-gradient-to-b from-[#1B2C61] from-0% via-[#1B2C61] via-65% to-cyan-700 to-85%
+            max-sm:from-[#192756] max-sm:via-[#192756] max-sm:to-cyan-700
+            max-lg:bg-gradient-to-b max-lg:from-[#192756] max-lg:from-0% max-lg:via-[#192756] max-lg:via-70% max-lg:to-cyan-700 max-lg:to-95%"
             initial={{
               width: 250,
               height: 250,
@@ -328,12 +351,14 @@ export default function Portfolio() {
           ></motion.div>
 
           <motion.div
-            className="fixed h-[100svh] flex flex-col inset-0 z-40 overflow-hidden"
+            className="fixed inset-0 z-40 flex flex-col
+            max-h-[100dvh] overflow-y-auto overscroll-contain touch-pan-y
+            pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 1 }}
           >
-            <div className="w-full flex items-center justify-end py-5 pr-5 max-md:py-3">
+            <div className="w-full flex items-center justify-end py-3 pr-5 max-md:py-3">
               <IoMdCloseCircle
                 color="white"
                 onClick={() => setFullScreen(false)}
@@ -341,7 +366,7 @@ export default function Portfolio() {
               />
             </div>
 
-            <div className="w-full flex h-full items-start justify-between  pb-5 max-lg:flex-col">
+            <div className="w-full flex flex-1 items-start justify-between pb-5 max-lg:flex-col">
               {/* <div className="w-1/2 flex items-center justify-center border-green-500 border-2 max-lg:w-full xl:hidden">
                 <MuxPlayer
                   className="w-[100%]"
@@ -372,7 +397,7 @@ export default function Portfolio() {
                   }}
                 />
               </div>
-              <div className="w-3/5 relative flex flex-col p-8 max-lg:w-full">
+              <div className="w-3/5 relative flex flex-col px-8 py-3 max-lg:w-full">
                 <div className="absolute top-0 right-3 border-t-4 border-r-4 border-white size-[50px]"></div>
                 <div className="absolute bottom-0 left-3 border-b-4 border-l-4 border-white size-[50px]"></div>
                 <h1 className="font-inter text-6xl max-xl:text-2xl max-lg:text-center">
@@ -381,7 +406,7 @@ export default function Portfolio() {
                   </span>
                   -<span className="italic">Time is now yours</span>
                 </h1>
-                <p className="font-inter font-light text-2xl mt-5 max-lg:text-base">
+                <p className="font-inter font-light text-2xl mt-5 max-lg:text-base max-sm:text-sm">
                   I worked for many years in the ambulance sector in France, and
                   later transitioned into web development to create a mobile
                   application designed specifically for ambulance companies.
